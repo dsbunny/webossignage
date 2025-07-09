@@ -1257,6 +1257,10 @@ export type FormatUSBOptions = {
 	fsType?: "fat32";
 }
 
+export type MD5FilePath = {
+	filePath: string;
+};
+
 export type MD5Hash = {
 	md5hash: string;
 };
@@ -1417,7 +1421,7 @@ export class Storage {
 	getMD5Hash(
 		successCb: MD5HashSuccessCallback,
 		failureCb: ScapFailureCallback,
-		options: FilePath,
+		options: MD5FilePath,
 	): void;
 	getStorageInfo(
 		successCb: StorageInfoSuccessCallback,
