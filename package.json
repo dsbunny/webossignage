@@ -6,6 +6,11 @@
 			"import": {
 				"types": "./scap.d.ts"
 			}
+		},
+		"./custom": {
+			"import": {
+				"types": "./custom.d.ts"
+			}
 		}
 	},
 	"projects": [
