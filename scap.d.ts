@@ -1407,7 +1407,7 @@ export class Storage {
 	fsync(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
-		options: FilePath,
+		options?: FilePath,
 	): void;
 	getDownloadFileStatus(
 		successCb: DownloadFileStatusSuccessCallback,
