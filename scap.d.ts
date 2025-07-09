@@ -1,15 +1,15 @@
 // vim: tabstop=8 softtabstop=0 noexpandtab shiftwidth=8 nosmarttab
 
-type ScapFailure = {
+export type ScapFailure = {
 	errorCode: string;
 	errorText: string;
 };
 
-type ScapSuccessCallback = () => void;
-type ScapFailureCallback = (error: ScapFailure) => void;
+export type ScapSuccessCallback = () => void;
+export type ScapFailureCallback = (error: ScapFailure) => void;
 
 // #region Configuration
-type CurrentTime = {
+export type CurrentTime = {
 	year: number;
 	month: number;
 	day: number;
@@ -20,38 +20,38 @@ type CurrentTime = {
 	ntpServerAddress?: string;
 };
 
-type LocaleCountry = {
+export type LocaleCountry = {
 	name: string;
 	specifier: string;
 };
 
-type Locale = {
+export type Locale = {
 	language: string;
 	langaugeCode: string;
 	countries: LocaleCountry[];
 };
 
-type LocaleList = {
+export type LocaleList = {
 	localeList: Locale[];
 };
 
-type MasterPinStatus = {
+export type MasterPinStatus = {
 	activated: boolean;
 };
 
-type OSDLanguage = {
+export type OSDLanguage = {
 	specifier: string;
 };
 
-type OSDLock = {
+export type OSDLock = {
 	enabled: boolean;
 };
 
-type PictureMode = {
+export type PictureMode = {
 	mode: Configuration.PictureMode;
 };
 
-type PictureProperty = {
+export type PictureProperty = {
 	backlight?: number;
 	contrast?: number;
 	brightness?: number;
@@ -69,18 +69,18 @@ type PictureProperty = {
 	gamma?: 'low' | 'medium' | 'high' | 'high3';
 };
 
-type Property = {
+export type Property = {
 	alias?: string;
 	operation_mode_after_screen_share?: string;
 	key_delivery_to_simplink?: string;
 	cec_device_control?: string;
 };
 
-type ProxyBypassList = {
+export type ProxyBypassList = {
 	urlList: string[];
 };
 
-type ServerProperty = {
+export type ServerProperty = {
 	serverIp: string;
 	serverPort: number;
 	secureConnection: boolean;
@@ -91,33 +91,33 @@ type ServerProperty = {
 	appLaunchDeviceId?: string;
 };
 
-type TimeZone = {
+export type TimeZone = {
 	continent: string;
 	country: string;
 	city: string;
 };
 
-type TimeZoneList = {
+export type TimeZoneList = {
 	timeZone: TimeZone[];
 };
 
-type USBLock = {
+export type USBLock = {
 	enabled: boolean;
 };
 
-type CurrentTimeSuccessCallback = (cbObject: CurrentTime) => void;
-type LocaleListSuccessCallback = (cbObject: LocaleList) => void;
-type MasterPinStatusSuccessCallback = (cbObject: MasterPinStatus) => void;
-type OSDLanguageSuccessCallback = (cbObject: OSDLanguage) => void;
-type OSDLockSuccessCallback = (cbObject: OSDLock) => void;
-type PictureModeSuccessCallback = (cbObject: PictureMode) => void;
-type PicturePropertySuccessCallback = (cbObject: PictureProperty) => void;
-type PropertySuccessCallback = (cbObject: Property) => void;
-type ProxyBypassListSuccessCallback = (cbObject: ProxyBypassList) => void;
-type TimeZoneSuccessCallback = (cbObject: TimeZone) => void;
-type TimeZoneListSuccessCallback = (cbObject: TimeZoneList) => void;
-type USBLockSuccessCallback = (cbObject: USBLock) => void;
-type ServerPropertySuccessCallback = (cbObject: ServerProperty) => void;
+export type CurrentTimeSuccessCallback = (cbObject: CurrentTime) => void;
+export type LocaleListSuccessCallback = (cbObject: LocaleList) => void;
+export type MasterPinStatusSuccessCallback = (cbObject: MasterPinStatus) => void;
+export type OSDLanguageSuccessCallback = (cbObject: OSDLanguage) => void;
+export type OSDLockSuccessCallback = (cbObject: OSDLock) => void;
+export type PictureModeSuccessCallback = (cbObject: PictureMode) => void;
+export type PicturePropertySuccessCallback = (cbObject: PictureProperty) => void;
+export type PropertySuccessCallback = (cbObject: Property) => void;
+export type ProxyBypassListSuccessCallback = (cbObject: ProxyBypassList) => void;
+export type TimeZoneSuccessCallback = (cbObject: TimeZone) => void;
+export type TimeZoneListSuccessCallback = (cbObject: TimeZoneList) => void;
+export type USBLockSuccessCallback = (cbObject: USBLock) => void;
+export type ServerPropertySuccessCallback = (cbObject: ServerProperty) => void;
 
 export namespace Configuration {
 	const enum AppMode {
@@ -260,22 +260,22 @@ export class Configuration {
 // #endregion
 
 // #region DeviceInfo
-type BlockedPort = {
+export type BlockedPort = {
 	blockedPort: number;
 	direction: "in" | "out" | "all";
 	protocol: "tcp" | "udp";
 };
 
-type BlockedPortList = {
+export type BlockedPortList = {
 	blockedPortList: BlockedPort[];
 };
 
-type NetworkCheckupInfo = {
+export type NetworkCheckupInfo = {
 	mode: "default" | "manual";
 	url?: string;
 };
 
-type NetworkInfo = {
+export type NetworkInfo = {
 	isInternetConnectionAvailable?: boolean;
 	wired: {
 		enabled?: boolean;
@@ -312,7 +312,7 @@ type NetworkInfo = {
 	};
 };
 
-type NetworkMacInfo = {
+export type NetworkMacInfo = {
 	wiredInfo?: {
 		macAddress?: string;
 	};
@@ -321,7 +321,7 @@ type NetworkMacInfo = {
 	};
 };
 
-type PlatformInfo = {
+export type PlatformInfo = {
 	modelName: string;
 	serialNumber: string;
 	firmwareVersion: string;
@@ -330,7 +330,7 @@ type PlatformInfo = {
 	manufacturer: string;
 };
 
-type ProxyInfo = {
+export type ProxyInfo = {
 	enabled: boolean;
 	ipAddress: string;
 	port: number;
@@ -338,7 +338,7 @@ type ProxyInfo = {
 	password?: string;
 };
 
-type SensorValues = {
+export type SensorValues = {
 	backlight: number;
 	checkscreen?: {
 		colorValid: boolean;
@@ -356,12 +356,12 @@ type SensorValues = {
 	temperature?: number;
 };
 
-type SystemUsageInfoOptions = {
+export type SystemUsageInfoOptions = {
 	cpus: boolean;
 	memory: boolean;
 };
 
-type SystemUsageInfoCpuTimes = {
+export type SystemUsageInfoCpuTimes = {
 	user: number;
 	nice: number;
 	sys: number;
@@ -369,7 +369,7 @@ type SystemUsageInfoCpuTimes = {
 	irq: number;
 };
 
-type SystemUsageInfoMemory = {
+export type SystemUsageInfoMemory = {
 	total: number;
 	free: number;
 	used: number;
@@ -377,24 +377,24 @@ type SystemUsageInfoMemory = {
 	cached: number;
 };
 
-type SystemUsageInfoCpu = {
+export type SystemUsageInfoCpu = {
 	model: string;
 	times: SystemUsageInfoCpuTimes;
 };
 
-type SystemUsageInfo = {
+export type SystemUsageInfo = {
 	cpus: SystemUsageInfoCpu[];
 	memory: SystemUsageInfoMemory;
 };
 
-type BlockedPortListSuccessCallback = (cbObject: BlockedPortList) => void;
-type NetworkCheckupInfoSuccessCallback = (cbObject: NetworkCheckupInfo) => void;
-type NetworkInfoSuccessCallback = (cbObject: NetworkInfo) => void;
-type NetworkMacInfoSuccessCallback = (cbObject: NetworkMacInfo) => void;
-type PlatformInfoSuccessCallback = (cbObject: PlatformInfo) => void;
-type ProxyInfoSuccessCallback = (cbObject: ProxyInfo) => void;
-type SensorValuesSuccessCallback = (cbObject: SensorValues) => void;
-type SystemUsageInfoSuccessCallback = (cbObject: SystemUsageInfo) => void;
+export type BlockedPortListSuccessCallback = (cbObject: BlockedPortList) => void;
+export type NetworkCheckupInfoSuccessCallback = (cbObject: NetworkCheckupInfo) => void;
+export type NetworkInfoSuccessCallback = (cbObject: NetworkInfo) => void;
+export type NetworkMacInfoSuccessCallback = (cbObject: NetworkMacInfo) => void;
+export type PlatformInfoSuccessCallback = (cbObject: PlatformInfo) => void;
+export type ProxyInfoSuccessCallback = (cbObject: ProxyInfo) => void;
+export type SensorValuesSuccessCallback = (cbObject: SensorValues) => void;
+export type SystemUsageInfoSuccessCallback = (cbObject: SystemUsageInfo) => void;
 
 export class DeviceInfo {
 	getBlockedPortList(
@@ -459,7 +459,7 @@ export class DeviceInfo {
 // #endregion
 
 // #region InputSource
-type ExternalInputList = {
+export type ExternalInputList = {
 	inputSourceList: {
 		inputPort: string;
 		signalDetection: boolean;
@@ -471,7 +471,7 @@ type ExternalInputList = {
 	currentInputPort: string;
 }
 
-type InputSourceListSuccessCallback = (info: ExternalInputList) => void;
+export type InputSourceListSuccessCallback = (info: ExternalInputList) => void;
 
 export class InputSource {
 	getExternalInputList(
@@ -482,42 +482,42 @@ export class InputSource {
 // #endregion
 
 // #region Power
-type DPMWakeup = {
+export type DPMWakeup = {
 	dpmSignalType: Power.DPMSignalType;
 }
 
-type PowerCommand = {
+export type PowerCommand = {
 	powerCommand: Power.PowerCommand;
 }
 
-type PowerOnDelay = {
+export type PowerOnDelay = {
 	delayTime: number; // in seconds
 }
 
-type PMMode = {
+export type PMMode = {
 	mode: Power.PMMode;
 }
 
-type PowerStatus = {
+export type PowerStatus = {
 	wakeOnLan: boolean;
 	displayMode: Power.DisplayMode;
 	allOffTimer: boolean;
 	allOnTimer: boolean;
 }
 
-type DisplayMode = {
+export type DisplayMode = {
 	displayMode: Power.DisplayMode;
 }
 
-type WakeOnLan = {
+export type WakeOnLan = {
 	wakeOnLan: boolean;
 }
 
-type DPMWakeupSuccessCallback = (cbObject: DPMWakeup) => void;
-type PMModeSuccessCallback = (cbObject: PMMode) => void;
-type PowerOnDelaySuccessCallback = (cbObject: PowerOnDelay) => void;
-type PowerStatusSuccessCallback = (cbObject: PowerStatus) => void;
-type DisplayModeSuccessCallback = (cbObject: DisplayMode) => void;
+export type DPMWakeupSuccessCallback = (cbObject: DPMWakeup) => void;
+export type PMModeSuccessCallback = (cbObject: PMMode) => void;
+export type PowerOnDelaySuccessCallback = (cbObject: PowerOnDelay) => void;
+export type PowerStatusSuccessCallback = (cbObject: PowerStatus) => void;
+export type DisplayModeSuccessCallback = (cbObject: DisplayMode) => void;
 
 export namespace Power {
 	const enum DisplayMode {
@@ -592,19 +592,19 @@ export class Power {
 // #endregion
 
 // #region Security
-type DomainNameList = {
+export type DomainNameList = {
 	domainNameList: string[];
 };
 
-type RemovedDomainNameList = {
+export type RemovedDomainNameList = {
 	removedDomainList: string[];
 };
 
-type ServerCertificateListState = {
+export type ServerCertificateListState = {
 	serverCertificateList: string[];
 };
 
-type ServerCertificateListStatus = {
+export type ServerCertificateListStatus = {
 	serverCertificateList: {
 		domainName?: string;
 		issuerName?: string;
@@ -613,10 +613,10 @@ type ServerCertificateListStatus = {
 	}[];
 };
 
-type ServerCertificateListSuccessCallback = (
+export type ServerCertificateListSuccessCallback = (
 	cbObject: ServerCertificateListStatus,
 ) => void;
-type UnregisterServerCertificateListSuccessCallback = (
+export type UnregisterServerCertificateListSuccessCallback = (
 	cbObject: RemovedDomainNameList,
 ) => void;
 
@@ -643,67 +643,67 @@ export class Security {
 // #endregion
 
 // #region Signage
-type CheckScreen = {
+export type CheckScreen = {
 	checkScreen: boolean;
 };
 
-type CaptureScreenOptions = {
+export type CaptureScreenOptions = {
 	save?: boolean;
 	thumbnail?: boolean;
 	imgResolution?: Signage.ImgResolution;
 };
 
-type CaptureScreen = {
+export type CaptureScreen = {
 	data: string;
 	size: number;
 	encoding: "Base64";
 };
 
-type DigitalAudioInputMode = {
+export type DigitalAudioInputMode = {
 	digitalAudioInput: Signage.DigitalAudioInput;
 };
 
-type FailoverMode = {
+export type FailoverMode = {
 	mode: Signage.FailoverMode;
 	priority?: string[];
 };
 
-type IntelligentAuto = {
+export type IntelligentAuto = {
 	enabled: boolean;
 };
 
-type IsmMethod = {
+export type IsmMethod = {
 	ismMethod: Signage.IsmMethod;
 };
 
-type LanDaisyChain = {
+export type LanDaisyChain = {
 	enabled: boolean;
 };
 
-type MirrorMode = {
+export type MirrorMode = {
 	mode: "on" | "off";
 };
 
-type NoSignalImageMode = {
+export type NoSignalImageMode = {
 	noSignalImage: "on" | "off";
 };
 
-type PortraitMode = {
+export type PortraitMode = {
 	portraitMode: Signage.OsdPortraitMode;
 };
 
-type PowerSaveMode = {
+export type PowerSaveMode = {
 	ses?: boolean;
 	dpmMode?: Signage.DpmMode;
 	automaticStandby?: Signage.AutomaticStandbyMode;
 	do15MinOff?: boolean;
 };
 
-type QuietMode = {
+export type QuietMode = {
 	mode: "on" | "off";
 };
 
-type RS232CConfiguration = {
+export type RS232CConfiguration = {
 	mode: number;
 	port: number;
 	baudRate: number;
@@ -714,18 +714,18 @@ type RS232CConfiguration = {
 	rxTimeoutInMs: number;
 };
 
-type SignageInfo = {
+export type SignageInfo = {
 	portraitMode: Signage.OsdPortraitMode;
 	digitalAudioInputMode: Signage.DigitalAudioInput;
 	ismMethod: Signage.IsmMethod;
 	checkScreen: boolean;
 };
 
-type SimplinkStatus = {
+export type SimplinkStatus = {
 	simplinkEnable: "on" | "off";
 };
 
-type TileInfo = {
+export type TileInfo = {
 	enabled: boolean;
 	rows: number;
 	column: number;
@@ -733,7 +733,7 @@ type TileInfo = {
 	naturalMode: boolean;
 };
 
-type UsageData = {
+export type UsageData = {
 	// Uptime since the last power-on. The integer part represents
 	// hours and the fractional part represents minutes. e.g., 1.5 ≡
 	// An hour and 30 minutes.
@@ -743,25 +743,25 @@ type UsageData = {
 	totalUsed: number;
 };
 
-type UsagePermission = {
+export type UsagePermission = {
 	remoteKeyOperationMode: Signage.KeyOperationMode;
 	localKeyOperationMode: Signage.KeyOperationMode;
 };
 
-type CaptureScreenSuccessCallback = (cbObject: CaptureScreen) => void;
-type FailoverModeSuccessCallback = (cbObject: FailoverMode) => void;
-type IntelligentAutoSuccessCallback = (cbObject: IntelligentAuto) => void;
-type LanDaisyChainSuccessCallback = (cbObject: LanDaisyChain) => void;
-type MirrorModeSuccessCallback = (cbObject: MirrorMode) => void;
-type NoSignalImageModeSuccessCallback = (cbObject: NoSignalImageMode) => void;
-type PowerSaveModeSuccessCallback = (cbObject: PowerSaveMode) => void;
-type QuietModeSuccessCallback = (cbObject: QuietMode) => void;
-type RS232CConfigurationSuccessCallback = (cbObject: RS232CConfiguration) => void;
-type SignageInfoSuccessCallback = (cbObject: SignageInfo) => void;
-type SimplinkStatusSuccessCallback = (cbObject: SimplinkStatus) => void;
-type TileInfoSuccessCallback = (cbObject: TileInfo) => void;
-type UsageDataSuccessCallback = (cbObject: UsageData) => void;
-type UsagePermissionSuccessCallback = (cbObject: UsagePermission) => void;
+export type CaptureScreenSuccessCallback = (cbObject: CaptureScreen) => void;
+export type FailoverModeSuccessCallback = (cbObject: FailoverMode) => void;
+export type IntelligentAutoSuccessCallback = (cbObject: IntelligentAuto) => void;
+export type LanDaisyChainSuccessCallback = (cbObject: LanDaisyChain) => void;
+export type MirrorModeSuccessCallback = (cbObject: MirrorMode) => void;
+export type NoSignalImageModeSuccessCallback = (cbObject: NoSignalImageMode) => void;
+export type PowerSaveModeSuccessCallback = (cbObject: PowerSaveMode) => void;
+export type QuietModeSuccessCallback = (cbObject: QuietMode) => void;
+export type RS232CConfigurationSuccessCallback = (cbObject: RS232CConfiguration) => void;
+export type SignageInfoSuccessCallback = (cbObject: SignageInfo) => void;
+export type SimplinkStatusSuccessCallback = (cbObject: SimplinkStatus) => void;
+export type TileInfoSuccessCallback = (cbObject: TileInfo) => void;
+export type UsageDataSuccessCallback = (cbObject: UsageData) => void;
+export type UsagePermissionSuccessCallback = (cbObject: UsagePermission) => void;
 
 export namespace Signage {
 	const UNDEFINED = "___undefined___";
@@ -1066,37 +1066,37 @@ export class Signage {
 // #endregion
 
 // #region Sound
-type ExternalSpeaker = {
+export type ExternalSpeaker = {
 	externalSpeaker: boolean;
 };
 
-type Muted = {
+export type Muted = {
 	muted: boolean;
 };
 
-type SoundMode = {
+export type SoundMode = {
 	mode: Sound.SoundMode;
 	balance?: number;  // -50 to 50
 };
 
-type SoundOut = {
+export type SoundOut = {
 	speakerType: Sound.SpeakerType;
 };
 
-type SoundStatus = {
+export type SoundStatus = {
 	level: number;  // 0 to 100
 	muted: boolean;
 	externalSpeaker: boolean;
 };
 
-type VolumeLevel = {
+export type VolumeLevel = {
 	level: number;  // 0 to 100
 	volOsdEnabled?: boolean;
 }
 
-type SoundModeSuccessCallback = (cbObject: SoundMode) => void;
-type SoundOutSuccessCallback = (cbObject: SoundOut) => void;
-type SoundStatusSuccessCallback = (cbObject: SoundStatus) => void;
+export type SoundModeSuccessCallback = (cbObject: SoundMode) => void;
+export type SoundOutSuccessCallback = (cbObject: SoundOut) => void;
+export type SoundStatusSuccessCallback = (cbObject: SoundStatus) => void;
 
 export namespace Sound {
 	const enum SoundMode {
@@ -1154,11 +1154,11 @@ export class Sound {
 // #endregion
 
 // #region Storage
-type ChangeLogoImageOptions = {
+export type ChangeLogoImageOptions = {
 	uri: string;
 };
 
-type CopyFileOptions = {
+export type CopyFileOptions = {
 	source: string;
 	destination: string;
 	ftpOption?: {
@@ -1178,14 +1178,14 @@ type CopyFileOptions = {
 	};
 };
 
-type DecryptFileOptions = {
+export type DecryptFileOptions = {
 	cipher_mode: "aes-128-cbc" | "aes-128-ecb" | "aes-192-cbc" | "aes-192-ecb" | "aes-256-cbc" | "aes-256-ecb";
 	password: string;
 	inputPath: string;
 	outputFileName: string;
 };
 
-type DownloadFileOptions = {
+export type DownloadFileOptions = {
 	action: "start" | "pause" | "resume" | "cancel";
 	source?: string;
 	destination?: string;
@@ -1203,7 +1203,7 @@ type DownloadFileOptions = {
 	};
 };
 
-type DownloadFileStatus = {
+export type DownloadFileStatus = {
 	ticket: number;
 	status: "downloading" | "completed" | "paused" | "cancelled" | "failed";
 	source?: string;
@@ -1213,15 +1213,15 @@ type DownloadFileStatus = {
 	reason?: string; // reason for failure or cancellation
 };
 
-type DownloadFirmwareOptions = {
+export type DownloadFirmwareOptions = {
 	uri: string;
 };
 
-type FileData = {
+export type FileData = {
 	data: string | ArrayBuffer; // Base64 encoded string or ArrayBuffer
 };
 
-type FileList = {
+export type FileList = {
 	files: {
 		name?: string;
 		type?: string;
@@ -1230,15 +1230,15 @@ type FileList = {
 	totalCount: number;
 };
 
-type FilePath = {
+export type FilePath = {
 	path: string;
 };
 
-type FilePathExists = {
+export type FilePathExists = {
 	exists: boolean;
 };
 
-type FileStat = {
+export type FileStat = {
 	type: "file" | "directory" | "unknown";
 	size: number; // in bytes
 	atime: string; // last access time in ISO format
@@ -1246,48 +1246,48 @@ type FileStat = {
 	ctime: string; // creation time in ISO format
 };
 
-type FirmwareUpgradeStatus = {
+export type FirmwareUpgradeStatus = {
 	status: "idle" | "downloading" | "ready" | "in progress" | "completed" | "fail";
 	downloadProgress: number;
 	upgradeProgress: number;
 };
 
-type FormatUSBOptions = {
+export type FormatUSBOptions = {
 	usbName: string;
 	fsType?: "fat32";
 }
 
-type MD5Hash = {
+export type MD5Hash = {
 	md5hash: string;
 };
 
-type MoveFileOptions = {
+export type MoveFileOptions = {
 	oldPath: string;
 	newPath: string;
 };
 
-type ReadFileOptions = {
+export type ReadFileOptions = {
 	path: string;
 	position?: number; // position in bytes
 	length?: number; // length in bytes, maximum is 10,240 bytes
 	encoding?: "utf8" | "base64" | "binary";
 };
 
-type RemoveAllOptions = {
+export type RemoveAllOptions = {
 	device: string;
 };
 
-type RemoveApplication = {
+export type RemoveApplication = {
 	to: Storage.AppMode;
 	deviceId?: string;
 };
 
-type RemoveFileOptions = {
+export type RemoveFileOptions = {
 	file: string;
 	recursive?: boolean; // if true, removes directories and their contents
 };
 
-type StorageInfo = {
+export type StorageInfo = {
 	free: number;  // in KB
 	total: number; // in KB
 	used: number;  // in KB
@@ -1298,26 +1298,26 @@ type StorageInfo = {
 	}>;
 };
 
-type Ticket = {
+export type Ticket = {
 	ticket: number;
 };
 
-type UnzipFileOptions = {
+export type UnzipFileOptions = {
 	zipPath: string;
 	targetPath: string;
 };
 
-type UpgradeApplicationOptions = {
+export type UpgradeApplicationOptions = {
 	to: Storage.AppMode;
 	recovery?: boolean;
 	type?: Storage.AppType;
 };
 
-type UpgradeFirmwareOptions = {
+export type UpgradeFirmwareOptions = {
 	path: string;
 }
 
-type USBInfo = {
+export type USBInfo = {
 	usbList: {
 		usbName: string;
 		vendor: string;
@@ -1326,7 +1326,7 @@ type USBInfo = {
 	}[];
 };
 
-type WriteFileOptions = {
+export type WriteFileOptions = {
 	path: string;
 	data: string | ArrayBuffer; // Base64 encoded string or ArrayBuffer
 	mode?: "truncate" | "append" | "position";
@@ -1336,16 +1336,16 @@ type WriteFileOptions = {
 	offset?: number; // offset in bytes, required if mode is "position"
 };
 
-type DownloadFileSuccessCallback = (cbObject: Ticket) => void;
-type DownloadFileStatusSuccessCallback = (cbObject: DownloadFileStatus) => void;
-type ExistsSuccessCallback = (cbObject: FilePathExists) => void;
-type FirmwareUpgradeStatusSuccessCallback = (cbObject: FirmwareUpgradeStatus) => void;
-type ListFilesSuccessCallback = (cbObject: FileList) => void;
-type MD5HashSuccessCallback = (cbObject: MD5Hash) => void;
-type ReadFileSuccessCallback = (cbObject: FileData) => void;
-type StatFileSuccessCallback = (cbObject: FileStat) => void;
-type StorageInfoSuccessCallback = (cbObject: StorageInfo) => void;
-type USBInfoSuccessCallback = (cbObject: USBInfo) => void;
+export type DownloadFileSuccessCallback = (cbObject: Ticket) => void;
+export type DownloadFileStatusSuccessCallback = (cbObject: DownloadFileStatus) => void;
+export type ExistsSuccessCallback = (cbObject: FilePathExists) => void;
+export type FirmwareUpgradeStatusSuccessCallback = (cbObject: FirmwareUpgradeStatus) => void;
+export type ListFilesSuccessCallback = (cbObject: FileList) => void;
+export type MD5HashSuccessCallback = (cbObject: MD5Hash) => void;
+export type ReadFileSuccessCallback = (cbObject: FileData) => void;
+export type StatFileSuccessCallback = (cbObject: FileStat) => void;
+export type StorageInfoSuccessCallback = (cbObject: StorageInfo) => void;
+export type USBInfoSuccessCallback = (cbObject: USBInfo) => void;
 
 // WebOS namespace conflicts with the global Storage interface.
 // @ts-ignore
@@ -1497,11 +1497,11 @@ export class Storage {
 // #endregion
 
 // #region Time
-type AllOnOffTimers = {
+export type AllOnOffTimers = {
 	timerList: OnOffTimer[];
 }
 
-type HolidaySchedule = {
+export type HolidaySchedule = {
 	holidayScheduleList: {
 		_id?: string;
 		name?: string;
@@ -1516,7 +1516,7 @@ type HolidaySchedule = {
 	};
 };
 
-type OnOffTimer = {
+export type OnOffTimer = {
 	id?: number;
 	type: Time.TimerType;
 	hour: number;
@@ -1524,12 +1524,12 @@ type OnOffTimer = {
 	week: number;
 }
 
-type TimerId = {
+export type TimerId = {
 	id: number;
 };
 
-type AllOnOffTimersSuccessCallback = (cbObject: AllOnOffTimers) => void;
-type HolidayScheduleSuccessCallback = (cbObject: HolidaySchedule) => void;
+export type AllOnOffTimersSuccessCallback = (cbObject: AllOnOffTimers) => void;
+export type HolidayScheduleSuccessCallback = (cbObject: HolidaySchedule) => void;
 
 export namespace Time {
 	const enum TimerType {
@@ -1583,7 +1583,7 @@ export class Time {
 // #endregion
 
 // #region Utility
-type Toast = {
+export type Toast = {
 	msg: string;
 };
 
