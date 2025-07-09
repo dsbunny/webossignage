@@ -1226,7 +1226,7 @@ export type FileList = {
 		name?: string;
 		type?: string;
 		size?: number; // in bytes
-	};
+	}[];
 	totalCount: number;
 };
 
