@@ -1,0 +1,14 @@
+{
+	"name": "@types/webossignage",
+	"version": "1.0.0",
+	"exports": {
+		"./scap": {
+			"import": {
+				"types": "./scap.d.ts"
+			}
+		}
+	},
+	"projects": [
+		"https://webossignage.developer.lge.com/"
+	]
+}
