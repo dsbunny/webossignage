@@ -139,117 +139,119 @@ export namespace Configuration {
 		STANDARD = "normal",
 		VIVID = "vivid",
 	}
-	function clearCache(
+}
+export class Configuration {
+	clearCache(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getCurrentTime(
+	getCurrentTime(
 		successCb: CurrentTimeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getLocaleList(
+	getLocaleList(
 		successCb: LocaleListSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getMasterPinStatus(
+	getMasterPinStatus(
 		successCb: MasterPinStatusSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getOSDLanguage(
+	getOSDLanguage(
 		successCb: OSDLanguageSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getOSDLock(
+	getOSDLock(
 		successCb: OSDLockSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getPictureMode(
+	getPictureMode(
 		successCb: PictureModeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getPictureProperty(
+	getPictureProperty(
 		successCb: PicturePropertySuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getProperty(
+	getProperty(
 		successCb: PropertySuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getProxyBypassList(
+	getProxyBypassList(
 		successCb: ProxyBypassListSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getServerProperty(
+	getServerProperty(
 		successCb: ServerPropertySuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getTimeZone(
+	getTimeZone(
 		successCb: TimeZoneSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getTimeZoneList(
+	getTimeZoneList(
 		successCb: TimeZoneListSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getUSBLock(
+	getUSBLock(
 		successCb: USBLockSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function setCurrentTime(
+	setCurrentTime(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: CurrentTime,
 	): void;
-	function setMasterPinStatus(
+	setMasterPinStatus(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: MasterPinStatus,
 	): void;
-	function setOSDLanguage(
+	setOSDLanguage(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: OSDLanguage,
 	): void;
-	function setOSDLock(
+	setOSDLock(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: OSDLock,
 	): void;
-	function setPictureMode(
+	setPictureMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: PictureMode,
 	): void;
-	function setPictureProperty(
+	setPictureProperty(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: PictureProperty,
 	): void;
-	function setProperty(
+	setProperty(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: Property,
 	): void;
-	function setProxyBypassList(
+	setProxyBypassList(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: ProxyBypassList,
 	): void;
-	function restartApplication(
+	restartApplication(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function setServerProperty(
+	setServerProperty(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: ServerProperty,
 	): void;
-	function setTimeZone(
+	setTimeZone(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: TimeZone,
 	): void;
-	function setUSBLock(
+	setUSBLock(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: USBLock,
@@ -394,61 +396,61 @@ type ProxyInfoSuccessCallback = (cbObject: ProxyInfo) => void;
 type SensorValuesSuccessCallback = (cbObject: SensorValues) => void;
 type SystemUsageInfoSuccessCallback = (cbObject: SystemUsageInfo) => void;
 
-export namespace DeviceInfo {
-	function getBlockedPortList(
+export class DeviceInfo {
+	getBlockedPortList(
 		successCb: BlockedPortListSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getNetworkCheckupInfo(
+	getNetworkCheckupInfo(
 		successCb: NetworkCheckupInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getNetworkInfo(
+	getNetworkInfo(
 		successCb: NetworkInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getNetworkMacInfo(
+	getNetworkMacInfo(
 		successCb: NetworkMacInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getPlatformInfo(
+	getPlatformInfo(
 		successCb: PlatformInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getProxyInfo(
+	getProxyInfo(
 		successCb: ProxyInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getSensorValues(
+	getSensorValues(
 		successCb: SensorValuesSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getSystemUsageInfo(
+	getSystemUsageInfo(
 		successCb: SystemUsageInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: SystemUsageInfoOptions,
 	): void;
-	function setBlockedPortList(
+	setBlockedPortList(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: BlockedPortList,
 	): void;
-	function setNetworkCheckupInfo(
+	setNetworkCheckupInfo(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: NetworkCheckupInfo,
 	): void;
-	function setNetworkInfo(
+	setNetworkInfo(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: NetworkInfo,
 	): void;
-	function setProxyInfo(
+	setProxyInfo(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: ProxyInfo,
 	): void;
-	function setSensorValues(
+	setSensorValues(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: SensorValues,
@@ -471,8 +473,8 @@ type ExternalInputList = {
 
 type InputSourceListSuccessCallback = (info: ExternalInputList) => void;
 
-export namespace InputSource {
-	function getExternalInputList(
+export class InputSource {
+	getExternalInputList(
 		successCb: InputSourceListSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
@@ -538,48 +540,50 @@ export namespace Power {
 		REBOOT = "reboot",
 		SHUTDOWN = "powerOff",
 	}
-	function getDPMWakeup(
+}
+export class Power {
+	getDPMWakeup(
 		successCb: DPMWakeupSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function executePowerCommand(
+	executePowerCommand(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: PowerCommand,
 	): void;
-	function getPMMode(
+	getPMMode(
 		successCb: PMModeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getPowerOnDelay(
+	getPowerOnDelay(
 		successCb: PowerOnDelaySuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getPowerStatus(
+	getPowerStatus(
 		successCb: PowerStatusSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function setDPMWakeup(
+	setDPMWakeup(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: DPMWakeup,
 	): void;
-	function setDisplayMode(
+	setDisplayMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: DisplayMode
 	): void;
-	function setPMMode(
+	setPMMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: PMMode
 	): void;
-	function setPowerOnDelay(
+	setPowerOnDelay(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: PowerOnDelay,
 	): void;
-	function enableWakeOnLan(
+	enableWakeOnLan(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: WakeOnLan,
@@ -616,21 +620,21 @@ type UnregisterServerCertificateListSuccessCallback = (
 	cbObject: RemovedDomainNameList,
 ) => void;
 
-export namespace Security {
-	function getServerCertificateList(
+export class Security {
+	getServerCertificateList(
 		successCb: ServerCertificateListSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function registerServerCertificateList(
+	registerServerCertificateList(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: ServerCertificateListState,
 	): void;
-	function unregisterAllServerCertificateList(
+	unregisterAllServerCertificateList(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function unregisterServerCertificateList(
+	unregisterServerCertificateList(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: DomainNameList,
@@ -924,134 +928,136 @@ export namespace Signage {
 			SB_UNKNOWN = 0,
 		}
 	}
-	function captureScreen(
+}
+export class Signage {
+	captureScreen(
 		successCb: CaptureScreenSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options?: CaptureScreenOptions,
 	): void;
-	function getFailoverMode(
+	getFailoverMode(
 		successCb: FailoverModeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getIntelligentAuto(
+	getIntelligentAuto(
 		successCb: IntelligentAutoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getLanDaisyChain(
+	getLanDaisyChain(
 		successCb: LanDaisyChainSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getMirrorMode(
+	getMirrorMode(
 		successCb: MirrorModeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getNoSignalImageMode(
+	getNoSignalImageMode(
 		successCb: NoSignalImageModeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getPowerSaveMode(
+	getPowerSaveMode(
 		successCb: PowerSaveModeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getQuietMode(
+	getQuietMode(
 		successCb: QuietModeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getRS232CConfiguration(
+	getRS232CConfiguration(
 		successCb: RS232CConfigurationSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getSignageInfo(
+	getSignageInfo(
 		successCb: SignageInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getSimplinkStatus(
+	getSimplinkStatus(
 		successCb: SimplinkStatusSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getTileInfo(
+	getTileInfo(
 		successCb: TileInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getUsageData(
+	getUsageData(
 		successCb: UsageDataSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getUsagePermission(
+	getUsagePermission(
 		successCb: UsagePermissionSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function enableCheckScreen(
+	enableCheckScreen(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: CheckScreen,
 	): void;
-	function setDigitalAudioInputMode(
+	setDigitalAudioInputMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: DigitalAudioInputMode,
 	): void;
-	function setFailoverMode(
+	setFailoverMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FailoverMode,
 	): void;
-	function setIntelligentAuto(
+	setIntelligentAuto(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: IntelligentAuto,
 	): void;
-	function setIsmMethod(
+	setIsmMethod(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: IsmMethod,
 	): void;
-	function setLanDaisyChain(
+	setLanDaisyChain(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: LanDaisyChain,
 	): void;
-	function setMirrorMode(
+	setMirrorMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: MirrorMode,
 	): void;
-	function setNoSignalImageMode(
+	setNoSignalImageMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: NoSignalImageMode,
 	): void;
-	function setPortraitMode(
+	setPortraitMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: PortraitMode,
 	): void;
-	function setPowerSaveMode(
+	setPowerSaveMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: { powerSaveMode?: PowerSaveMode },
 	): void;
-	function setQuietMode(
+	setQuietMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: QuietMode,
 	): void;
-	function setRS232CConfiguration(
+	setRS232CConfiguration(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: RS232CConfiguration,
 	): void;
-	function setSimplinkStatus(
+	setSimplinkStatus(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: SimplinkStatus,
 	): void;
-	function setTileInfo(
+	setTileInfo(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: TileInfo,
 	): void;
-	function setUsagePermission(
+	setUsagePermission(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: UsagePermission,
@@ -1105,39 +1111,41 @@ export namespace Sound {
 		SignageSpeaker = "tv_speaker",
 		LGSoundSync = "bt_soundbar",
 	}
-	function getSoundMode(
+}
+export class Sound {
+	getSoundMode(
 		successCb: SoundModeSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getSoundOut(
+	getSoundOut(
 		successCb: SoundOutSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getSoundStatus(
+	getSoundStatus(
 		successCb: SoundStatusSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function setExternalSpeaker(
+	setExternalSpeaker(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: ExternalSpeaker,
 	): void;
-	function setMuted(
+	setMuted(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: Muted,
 	): void;
-	function setSoundMode(
+	setSoundMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: SoundMode,
 	): void;
-	function setSoundOut(
+	setSoundOut(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: SoundOut,
 	): void;
-	function setVolumeLevel(
+	setVolumeLevel(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: VolumeLevel,
@@ -1350,135 +1358,137 @@ export namespace Storage {
 		IPK = "IPK",
 		ZIP = "ZIP",
 	}
-	function changeLogoImage(
+}
+export class Storage {
+	changeLogoImage(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: ChangeLogoImageOptions,
 	)
-	function copyFile(
+	copyFile(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: CopyFileOptions,
 	): void;
-	function decryptFile(
+	decryptFile(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: DecryptFileOptions,
 	): void;
-	function downloadFile(
+	downloadFile(
 		successCb: DownloadFileSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: DownloadFileOptions,
 	): void;
-	function downloadFirmware(
+	downloadFirmware(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: DownloadFirmwareOptions,
 	): void;
-	function exists(
+	exists(
 		successCb: ExistsSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FilePath,
 	): void;
-	function exportSettingData(
+	exportSettingData(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FilePath,
 	): void;
-	function formatUSB(
+	formatUSB(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FormatUSBOptions,
 	): void;
-	function fsync(
+	fsync(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FilePath,
 	): void;
-	function getDownloadFileStatus(
+	getDownloadFileStatus(
 		successCb: DownloadFileStatusSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: Ticket & { subscribe?: boolean },
 	): void;
-	function getFirmwareUpgradeStatus(
+	getFirmwareUpgradeStatus(
 		successCb: FirmwareUpgradeStatusSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getMD5Hash(
+	getMD5Hash(
 		successCb: MD5HashSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FilePath,
 	): void;
-	function getStorageInfo(
+	getStorageInfo(
 		successCb: StorageInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getUSBInfo(
+	getUSBInfo(
 		successCb: USBInfoSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function importSettingData(
+	importSettingData(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FilePath,
 	): void;
-	function listFiles(
+	listFiles(
 		successCb: ListFilesSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FilePath,
 	): void;
-	function mkdir(
+	mkdir(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FilePath,
 	): void;
-	function moveFile(
+	moveFile(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: MoveFileOptions,
 	): void;
-	function readFile(
+	readFile(
 		successCb: ReadFileSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: ReadFileOptions,
 	): void;
-	function removeAll(
+	removeAll(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: RemoveAllOptions,
 	): void;
 	// A running app cannot remove itself by calling this API.
-	function removeApplication(
+	removeApplication(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: RemoveApplication,
 	): void;
-	function removeFile(
+	removeFile(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: RemoveFileOptions,
 	): void;
-	function statFile(
+	statFile(
 		successCb: StatFileSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: FilePath,
 	): void;
-	function unzipFile(
+	unzipFile(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: UnzipFileOptions,
 	): void;
-	function upgradeApplication(
+	upgradeApplication(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: UpgradeApplicationOptions,
 	): void;
-	function upgradeFirmware(
+	upgradeFirmware(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options?: UpgradeFirmwareOptions,
 	): void;
-	function writeFile(
+	writeFile(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: WriteFileOptions,
@@ -1536,33 +1546,35 @@ export namespace Time {
 		SUNDAY = 64,
 		EVERYDAY = 127,
 	}
-	function cancelOnOffTimer(
+}
+export class Time {
+	cancelOnOffTimer(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: TimerId,
 	): void;
-	function clearAllOnOffTimers(
+	clearAllOnOffTimers(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function clearHolidaySchedule(
+	clearHolidaySchedule(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getAllOnOffTimers(
+	getAllOnOffTimers(
 		successCb: AllOnOffTimersSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function getHolidaySchedule(
+	getHolidaySchedule(
 		successCb: HolidayScheduleSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
-	function reserveOnOffTimer(
+	reserveOnOffTimer(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: OnOffTimer,
 	): void;
-	function setHolidaySchedule(
+	setHolidaySchedule(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: HolidaySchedule,
@@ -1575,8 +1587,8 @@ type Toast = {
 	msg: string;
 };
 
-export namespace Utility {
-	function createToast(
+export class Utility {
+	createToast(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: Toast,
