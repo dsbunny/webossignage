@@ -120,25 +120,25 @@ export type USBLockSuccessCallback = (cbObject: USBLock) => void;
 export type ServerPropertySuccessCallback = (cbObject: ServerProperty) => void;
 
 export namespace Configuration {
-	const enum AppMode {
-		LOCAL = "local",
-		USB = "usb",
-		REMOTE = "remote",
-	}
-	const enum AppType {
-		IPK = "IPK",
-		ZIP = "ZIP",
-	}
-	const enum PictureMode {
-		APS = "eco",
-		CINEMA = "cinema",
-		EXPERT1 = "expert1",
-		EXPERT2 = "expert2",
-		GAME = "game",
-		SPORTS = "sports",
-		STANDARD = "normal",
-		VIVID = "vivid",
-	}
+	const AppMode = {
+		LOCAL: "local",
+		USB: "usb",
+		REMOTE: "remote",
+	} as const;
+	const AppType = {
+		IPK: "IPK",
+		ZIP: "ZIP",
+	} as const;
+	const PictureMode = {
+		APS: "eco",
+		CINEMA: "cinema",
+		EXPERT1: "expert1",
+		EXPERT2: "expert2",
+		GAME: "game",
+		SPORTS: "sports",
+		STANDARD: "normal",
+		VIVID: "vivid",
+	} as const;
 }
 export class Configuration {
 	clearCache(
@@ -520,26 +520,26 @@ export type PowerStatusSuccessCallback = (cbObject: PowerStatus) => void;
 export type DisplayModeSuccessCallback = (cbObject: DisplayMode) => void;
 
 export namespace Power {
-	const enum DisplayMode {
-		DISPLAY_OFF = "Screen Off",
-		DISPLAY_ON = "Active",
-	}
-	const enum DPMSignalType {
-		CLOCK = "clock",
-		CLOCK_AND_DATA = "clockAndData",
-	}
-	const enum PMMode {
-		PowerOff = "powerOff",
-		ScreenOff = "screenOff",
-		ScreenOffAlways = "screenOffAlways",
-		ScreenOffBacklight = "screenOffBacklight",
-		SustainAspectRatio = "sustainAspectRatio",
-		NetworkReady = "networkReady",
-	}
-	const enum PowerCommand {
-		REBOOT = "reboot",
-		SHUTDOWN = "powerOff",
-	}
+	const DisplayMode = {
+		DISPLAY_OFF: "Screen Off",
+		DISPLAY_ON: "Active",
+	} as const;
+	const DPMSignalType = {
+		CLOCK: "clock",
+		CLOCK_AND_DATA: "clockAndData",
+	} as const;
+	const PMMode = {
+		PowerOff: "powerOff",
+		ScreenOff: "screenOff",
+		ScreenOffAlways: "screenOffAlways",
+		ScreenOffBacklight: "screenOffBacklight",
+		SustainAspectRatio: "sustainAspectRatio",
+		NetworkReady: "networkReady",
+	} as const;
+	const PowerCommand = {
+		REBOOT: "reboot",
+		SHUTDOWN: "powerOff",
+	} as const;
 }
 export class Power {
 	getDPMWakeup(
@@ -761,167 +761,167 @@ export type UsagePermissionSuccessCallback = (cbObject: UsagePermission) => void
 
 export namespace Signage {
 	const UNDEFINED = "___undefined___";
-	const enum AutomaticStandbyMode {
-		OFF = "off",
-		STANDBY_4HOURS = "4 hours",
-	}
-	const enum DigitalAudioInput {
-		AUDIO_IN = "audioIn",
-		HDMI_DP = "hdmi",
-	}
-	const enum DpmMode {
-		OFF = "off",
-		POWER_OFF_5SECOND = "5sec",
-		POWER_OFF_10SECOND = "10sec",
-		POWER_OFF_15SECOND = "15sec",
-		POWER_OFF_1MINUTE = "1min",
-		POWER_OFF_3MINUTE = "3min",
-		POWER_OFF_5MINUTE = "5min",
-		POWER_OFF_10MINUTE = "10min",
-	}
-	const enum EventType {
-		CURRENT_TEMPERATURE = "CURRENT_TEMPERATURE",
-		FAN_STATUS = "FAN_STATUS",
-		LAMP_STATUS = "LAMP_STATUS",
-		SCREEN_STATUS = "SCREEN_STATUS",
-		SIGNAL_STATUS = "SIGNAL_STATUS",
-	}
-	const enum FailoverMode {
-		AUTO = "auto",
-		MANUAL = "manual",
-		OFF = "off",
-		UNDEFINED = "___undefined___",
-	}
-	const enum ImgResolution {
-		FHD = "FHD",
-		HD = "HD",
-	}
-	const enum IsmMethod {
-		COLORWASH = "COLORWASH",
-		INVERSION = "INVERSION",
-		NORMAL = "NORMAL",
-		ORBITER = "ORBITER",
-		USERIMAGE = "USERIMAGE",
-		USERVIDEO = "USERVIDEO",
-		WASHINGBAR = "WASHINGBAR",
-		WHITEWASH = "WHITEWASH",
-	}
-	const enum KeyCode {
-		AUTO = 1102,
-		BACK = 461,
-		BLUE = 406,
-		BRIGHTNESS_DOWN = 1101,
-		BRIGHTNESS_UP = 1100,
-		CLEAR = 8,
-		DISC_POWER_OFF = 706,
-		DISC_POWER_ON = 705,
-		DOWN = 40,
-		ENERGY_SAVING = 709,
-		ENTER = 10,
-		EXIT = 601,
-		FAST_FORWARD = 417,
-		GREEN = 404,
-		INFO = 1109,
-		INPUT = 712,
-		LEFT = 37,
-		LG_3D = 737,
-		MENU = 627,
-		MUTE = 449,
-		NUM_0 = 48,
-		NUM_1 = 49,
-		NUM_2 = 50,
-		NUM_3 = 51,
-		NUM_4 = 52,
-		NUM_5 = 53,
-		NUM_6 = 54,
-		NUM_7 = 55,
-		NUM_8 = 56,
-		NUM_9 = 57,
-		OPT_1aA = 1103,
-		PAUSE = 19,
-		PLAY = 415,
-		POWER = 409,
-		PSM = 1108,
-		RATIO = 772,
-		RED = 403,
-		REWIND = 412,
-		RIGHT = 39,
-		SIMPLINK = 724,
-		SMART_HOME = 734,
-		SMENU = 1106,
-		STOP = 413,
-		TILE = 1107,
-		UP = 38,
-		VOL_DOWN = 448,
-		VOL_UP = 447,
-		WBALANCE = 1105,
-		YELLOW = 405,
-	}
-	const enum KeyOperationMode {
-		ALLOW_ALL = "normal",
-		BLOCK_ALL = "blockAll",
-		POWER_ONLY = "usePwrOnly",
-	}
-	const enum MonitoringSource {
-		FAN = "FAN",
-		LAMP = "LAMP",
-		SCREEN = "SCREEN",
-		SIGNAL = "SIGNAL",
-		THERMOMETER = "THERMOMETER",
-	}
-	const enum OsdPortraitMode {
-		OFF = "off",
-		ON = "90",
-		UNDEFINED = "___undefined___",
-	}
+	const AutomaticStandbyMode = {
+		OFF: "off",
+		STANDBY_4HOURS: "4 hours",
+	} as const;
+	const DigitalAudioInput = {
+		AUDIO_IN: "audioIn",
+		HDMI_DP: "hdmi",
+	} as const;
+	const DpmMode = {
+		OFF: "off",
+		POWER_OFF_5SECOND: "5sec",
+		POWER_OFF_10SECOND: "10sec",
+		POWER_OFF_15SECOND: "15sec",
+		POWER_OFF_1MINUTE: "1min",
+		POWER_OFF_3MINUTE: "3min",
+		POWER_OFF_5MINUTE: "5min",
+		POWER_OFF_10MINUTE: "10min",
+	} as const;
+	const EventType = {
+		CURRENT_TEMPERATURE: "CURRENT_TEMPERATURE",
+		FAN_STATUS: "FAN_STATUS",
+		LAMP_STATUS: "LAMP_STATUS",
+		SCREEN_STATUS: "SCREEN_STATUS",
+		SIGNAL_STATUS: "SIGNAL_STATUS",
+	} as const;
+	const FailoverMode = {
+		AUTO: "auto",
+		MANUAL: "manual",
+		OFF: "off",
+		UNDEFINED: "___undefined___",
+	} as const;
+	const ImgResolution = {
+		FHD: "FHD",
+		HD: "HD",
+	} as const;
+	const IsmMethod = {
+		COLORWASH: "COLORWASH",
+		INVERSION: "INVERSION",
+		NORMAL: "NORMAL",
+		ORBITER: "ORBITER",
+		USERIMAGE: "USERIMAGE",
+		USERVIDEO: "USERVIDEO",
+		WASHINGBAR: "WASHINGBAR",
+		WHITEWASH: "WHITEWASH",
+	} as const;
+	const KeyCode = {
+		AUTO: 1102,
+		BACK: 461,
+		BLUE: 406,
+		BRIGHTNESS_DOWN: 1101,
+		BRIGHTNESS_UP: 1100,
+		CLEAR: 8,
+		DISC_POWER_OFF: 706,
+		DISC_POWER_ON: 705,
+		DOWN: 40,
+		ENERGY_SAVING: 709,
+		ENTER: 10,
+		EXIT: 601,
+		FAST_FORWARD: 417,
+		GREEN: 404,
+		INFO: 1109,
+		INPUT: 712,
+		LEFT: 37,
+		LG_3D: 737,
+		MENU: 627,
+		MUTE: 449,
+		NUM_0: 48,
+		NUM_1: 49,
+		NUM_2: 50,
+		NUM_3: 51,
+		NUM_4: 52,
+		NUM_5: 53,
+		NUM_6: 54,
+		NUM_7: 55,
+		NUM_8: 56,
+		NUM_9: 57,
+		OPT_1aA: 1103,
+		PAUSE: 19,
+		PLAY: 415,
+		POWER: 409,
+		PSM: 1108,
+		RATIO: 772,
+		RED: 403,
+		REWIND: 412,
+		RIGHT: 39,
+		SIMPLINK: 724,
+		SMART_HOME: 734,
+		SMENU: 1106,
+		STOP: 413,
+		TILE: 1107,
+		UP: 38,
+		VOL_DOWN: 448,
+		VOL_UP: 447,
+		WBALANCE: 1105,
+		YELLOW: 405,
+	} as const;
+	const KeyOperationMode = {
+		ALLOW_ALL: "normal",
+		BLOCK_ALL: "blockAll",
+		POWER_ONLY: "usePwrOnly",
+	} as const;
+	const MonitoringSource = {
+		FAN: "FAN",
+		LAMP: "LAMP",
+		SCREEN: "SCREEN",
+		SIGNAL: "SIGNAL",
+		THERMOMETER: "THERMOMETER",
+	} as const;
+	const OsdPortraitMode = {
+		OFF: "off",
+		ON: "90",
+		UNDEFINED: "___undefined___",
+	} as const;
 	namespace RS232C {
-		const enum BaudRate {
-			BR_1024000 = 1_024_000,
-			BR_110 = 110,
-			BR_115200 = 115_200,
-			BR_1200 = 1_200,
-			BR_128000 = 128_000,
-			BR_14400 = 14_400,
-			BR_19200 = 19_200,
-			BR_230400 = 230_400,
-			BR_2400 = 2_400,
-			BR_256000 = 256_000,
-			BR_300 = 300,
-			BR_38400 = 38_400,
-			BR_4800 = 4_800,
-			BR_512000 = 512_000,
-			BR_57600 = 57_600,
-			BR_600 = 600,
-			BR_768000 = 768_000,
-			BR_921600 = 921_600,
-			BR_9600 = 9_600,
-			BR_UNKNOWN = 0,
-		}
-		const enum DataBit {
-			DB_7 = 7,
-			DB_8 = 8,
-			DB_UNKNOWN = 0,
-		}
-		const enum FlowControl {
-			HARDWARE = 3,
-			NONE = 1,
-			UNKNOWN = 0,
-			XON_XOFF = 2,
-		}
-		const enum Mode {
-			MODE_0 = 0,
-			MODE_1 = 1,
-		}
-		const enum Parity {
-			EVEN = 2,
-			NONE = 1,
-			ODD = 3,
-			UNKNOWN = 0,
-		}
-		const enum StopBit {
-			SB_1 = 1,
-			SB_2 = 2,
-			SB_UNKNOWN = 0,
+		const BaudRate = {
+			BR_1024000: 1_024_000,
+			BR_110: 110,
+			BR_115200: 115_200,
+			BR_1200: 1_200,
+			BR_128000: 128_000,
+			BR_14400: 14_400,
+			BR_19200: 19_200,
+			BR_230400: 230_400,
+			BR_2400: 2_400,
+			BR_256000: 256_000,
+			BR_300: 300,
+			BR_38400: 38_400,
+			BR_4800: 4_800,
+			BR_512000: 512_000,
+			BR_57600: 57_600,
+			BR_600: 600,
+			BR_768000: 768_000,
+			BR_921600: 921_600,
+			BR_9600: 9_600,
+			BR_UNKNOWN: 0,
+		} as const;
+		const DataBit = {
+			DB_7: 7,
+			DB_8: 8,
+			DB_UNKNOWN: 0,
+		} as const;
+		const FlowControl = {
+			HARDWARE: 3,
+			NONE: 1,
+			UNKNOWN: 0,
+			XON_XOFF: 2,
+		} as const;
+		const Mode = {
+			MODE_0: 0,
+			MODE_1: 1,
+		} as const;
+		const Parity = {
+			EVEN: 2,
+			NONE: 1,
+			ODD: 3,
+			UNKNOWN: 0,
+		} as const;
+		const StopBit = {
+			SB_1: 1,
+			SB_2: 2,
+			SB_UNKNOWN: 0,
 		}
 	}
 }
@@ -1095,18 +1095,18 @@ export type SoundOutSuccessCallback = (cbObject: SoundOut) => void;
 export type SoundStatusSuccessCallback = (cbObject: SoundStatus) => void;
 
 export namespace Sound {
-	const enum SoundMode {
-		STANDARD = "standard",
-		MOVIE = "movie",
-		NEWS = "news",
-		SPORTS = "sports",
-		MUSIC = "music",
-		GAME = "game",
-	}
-	const enum SpeakerType {
-		SignageSpeaker = "tv_speaker",
-		LGSoundSync = "bt_soundbar",
-	}
+	const SoundMode = {
+		STANDARD: "standard",
+		MOVIE: "movie",
+		NEWS: "news",
+		SPORTS: "sports",
+		MUSIC: "music",
+		GAME: "game",
+	} as const;
+	const SpeakerType = {
+		SignageSpeaker: "tv_speaker",
+		LGSoundSync: "bt_soundbar",
+	} as const;
 }
 export class Sound {
 	getSoundMode(
@@ -1350,14 +1350,14 @@ export type USBInfoSuccessCallback = (cbObject: USBInfo) => void;
 // WebOS namespace conflicts with the global Storage interface.
 // @ts-ignore
 export namespace Storage {
-	const enum AppMode {
-		LOCAL = "local",
-		USB = "usb",
-	}
-	const enum AppType {
-		IPK = "IPK",
-		ZIP = "ZIP",
-	}
+	const AppMode = {
+		LOCAL: "local",
+		USB: "usb",
+	} as const;
+	const AppType = {
+		IPK: "IPK",
+		ZIP: "ZIP",
+	} as const;
 }
 export class Storage {
 	changeLogoImage(
@@ -1543,20 +1543,20 @@ export type AllOnOffTimersSuccessCallback = (cbObject: AllOnOffTimers) => void;
 export type HolidayScheduleSuccessCallback = (cbObject: HolidaySchedule) => void;
 
 export namespace Time {
-	const enum TimerType {
-		OFFTIMER = "OFFTIMER",
-		ONTIMER = "ONTIMER",
-	}
-	const enum TimerWeek {
-		MONDAY = 1,
-		TUESDAY = 2,
-		WEDNESDAY = 4,
-		THURSDAY = 8,
-		FRIDAY = 16,
-		SATURDAY = 32,
-		SUNDAY = 64,
-		EVERYDAY = 127,
-	}
+	const TimerType = {
+		OFFTIMER: "OFFTIMER",
+		ONTIMER: "ONTIMER",
+	} as const;
+	const TimerWeek = {
+		MONDAY: 1,
+		TUESDAY: 2,
+		WEDNESDAY: 4,
+		THURSDAY: 8,
+		FRIDAY: 16,
+		SATURDAY: 32,
+		SUNDAY: 64,
+		EVERYDAY: 127,
+	} as const;
 }
 export class Time {
 	cancelOnOffTimer(
