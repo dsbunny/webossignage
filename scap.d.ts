@@ -460,7 +460,7 @@ export class DeviceInfo {
 
 // #region InputSource
 export type ExternalInputList = {
-	inputSourceList: {
+	externalInputList: {
 		inputPort: string;
 		signalDetection: boolean;
 		vendorID: string;
@@ -600,12 +600,8 @@ export type RemovedDomainNameList = {
 	removedDomainList: string[];
 };
 
-export type ServerCertificateListState = {
-	serverCertificateList: string[];
-};
-
-export type ServerCertificateListStatus = {
-	serverCertificateList: {
+export type ServerCertificateList = {
+	serverCertificateList: string[] | {
 		domainName?: string;
 		issuerName?: string;
 		validFrom?: string;
@@ -614,7 +610,7 @@ export type ServerCertificateListStatus = {
 };
 
 export type ServerCertificateListSuccessCallback = (
-	cbObject: ServerCertificateListStatus,
+	cbObject: ServerCertificateList,
 ) => void;
 export type UnregisterServerCertificateListSuccessCallback = (
 	cbObject: RemovedDomainNameList,
@@ -628,7 +624,7 @@ export class Security {
 	registerServerCertificateList(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
-		options: ServerCertificateListState,
+		options: ServerCertificateList,
 	): void;
 	unregisterAllServerCertificateList(
 		successCb: ScapSuccessCallback,
