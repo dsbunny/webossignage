@@ -332,8 +332,8 @@ export type PlatformInfo = {
 
 export type ProxyInfo = {
 	enabled: boolean;
-	ipAddress: string;
-	port: number;
+	ipAddress?: string;
+	port?: number;
 	userName?: string;
 	password?: string;
 };
