@@ -197,6 +197,10 @@ export class Configuration {
 		successCb: USBLockSuccessCallback,
 		failureCb: ScapFailureCallback,
 	): void;
+	restartApplication(
+		successCb: ScapSuccessCallback,
+		failureCb: ScapFailureCallback,
+	): void;
 	setCurrentTime(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
@@ -237,10 +241,6 @@ export class Configuration {
 		failureCb: ScapFailureCallback,
 		options: ProxyBypassList,
 	): void;
-	restartApplication(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
 	setServerProperty(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
@@ -275,7 +275,7 @@ export type NetworkCheckupInfo = {
 	url?: string;
 };
 
-export type NetworkInfo = {
+export type NetworkInfoStatus = {
 	isInternetConnectionAvailable: boolean;
 	wired: {
 		state: 'connected' | 'disconnected';
@@ -308,7 +308,8 @@ export type NetworkInfo = {
 		dns1?: string;
 		dns2?: string;
 	};
-} | {
+};
+export type NetworkInfoState = {
 	wired: {
 		enabled?: boolean;
 		ipAddress?: string;
@@ -368,7 +369,7 @@ export type ProxyInfo = {
 	password?: string;
 };
 
-export type SensorValues = {
+export type SensorValuesStatus = {
 	backlight: number;
 	checkScreen: {
 		colorValid: boolean;
@@ -382,9 +383,10 @@ export type SensorValues = {
 	};
 	humidity: number;
 	illuminance: number;
-	rotation: string;
+	rotation: "0" | "90" | "180" | "270";
 	temperature: number;
-} | {
+};
+export type SensorValuesState = {
 	backlight: number;
 };
 
@@ -518,7 +520,7 @@ export type DPMWakeup = {
 	dpmSignalType: Power.DPMSignalType;
 }
 
-export type PowerCommand = {
+export type PowerCommandOptions = {
 	powerCommand: Power.PowerCommand;
 }
 
@@ -581,7 +583,7 @@ export class Power {
 	executePowerCommand(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
-		options: PowerCommand,
+		options: PowerCommandOptions,
 	): void;
 	getPMMode(
 		successCb: PMModeSuccessCallback,
@@ -729,6 +731,10 @@ export type PowerSaveMode = {
 
 export type QuietMode = {
 	mode: "on" | "off";
+};
+
+export type ResetOptions = {
+	mode: "softReset" | "factoryReset";
 };
 
 export type RS232CConfiguration = {
@@ -1019,6 +1025,11 @@ export class Signage {
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
 		options: CheckScreen,
+	): void;
+	reset(
+		successCb: ScapSuccessCallback,
+		failureCb: ScapFailureCallback,
+		options: ResetOptions,
 	): void;
 	setDigitalAudioInputMode(
 		successCb: ScapSuccessCallback,
