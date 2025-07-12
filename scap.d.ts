@@ -27,7 +27,7 @@ export type LocaleCountry = {
 
 export type Locale = {
 	language: string;
-	langaugeCode: string;
+	languageCode: string;
 	countries: LocaleCountry[];
 };
 
@@ -494,7 +494,7 @@ export class DeviceInfo {
 
 // #region InputSource
 export type ExternalInputList = {
-	externalInputList: {
+	inputSourceList: {
 		inputPort: string;
 		signalDetection: boolean;
 		vendorID: string;
@@ -634,17 +634,20 @@ export type RemovedDomainNameList = {
 	removedDomainList: string[];
 };
 
-export type ServerCertificateList = {
-	serverCertificateList: string[] | {
+export type ServerCertificateListStatus = {
+	serverCertificateList: {
 		domainName?: string;
 		issuerName?: string;
 		validFrom?: string;
 		validTo?: string;
 	}[];
 };
+export type ServerCertificateListState = {
+	serverCertificateList: string[];
+};
 
 export type ServerCertificateListSuccessCallback = (
-	cbObject: ServerCertificateList,
+	cbObject: ServerCertificateListStatus,
 ) => void;
 export type UnregisterServerCertificateListSuccessCallback = (
 	cbObject: RemovedDomainNameList,
@@ -658,7 +661,7 @@ export class Security {
 	registerServerCertificateList(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
-		options: ServerCertificateList,
+		options: ServerCertificateListState,
 	): void;
 	unregisterAllServerCertificateList(
 		successCb: ScapSuccessCallback,
@@ -714,8 +717,11 @@ export type MirrorMode = {
 	mode: "on" | "off";
 };
 
-export type NoSignalImageMode = {
+export type NoSignalImageModeStatus = {
 	noSignalImage: "on" | "off";
+};
+export type NoSignalImageModeState = {
+	noSignalImageMode: "on" | "off";
 };
 
 export type PortraitMode = {
@@ -723,10 +729,10 @@ export type PortraitMode = {
 };
 
 export type PowerSaveMode = {
-	ses?: boolean;
-	dpmMode?: Signage.DpmMode;
-	automaticStandby?: Signage.AutomaticStandbyMode;
-	do15MinOff?: boolean;
+	ses: boolean;
+	dpmMode: Signage.DpmMode;
+	automaticStandby: Signage.AutomaticStandbyMode;
+	do15MinOff: boolean;
 };
 
 export type QuietMode = {
@@ -738,14 +744,14 @@ export type ResetOptions = {
 };
 
 export type RS232CConfiguration = {
-	mode: number;
-	port: number;
-	baudRate: number;
-	dataBit: number;
-	parity: number;
-	stopBit: number;
-	flowControl: number;
-	rxTimeoutInMs: number;
+	mode: 0 | 1; // 0 is mode 0, 1 is mode 1
+	port?: number;
+	baudRate?: 0 | 1024000 | 110 | 115200 | 1200 | 128000 | 14400 | 19200 | 230400 | 2400 | 256000 | 300 | 38400 | 4800 | 512000 | 57600 | 600 | 768000 | 921600 | 9600;
+	dataBit?: 7 | 8 | 0; // 0 is unknown
+	parity?: 2 | 1 | 3 | 0;
+	stopBit?: 1 | 2 | 0;
+	flowControl?: 3 | 1 | 0 | 2;
+	rxTimeoutInMs?: number;
 };
 
 export type SignageInfo = {
@@ -761,7 +767,7 @@ export type SimplinkStatus = {
 
 export type TileInfo = {
 	enabled: boolean;
-	rows: number;
+	row: number;
 	column: number;
 	tileId: number;
 	naturalMode: boolean;
@@ -787,7 +793,7 @@ export type FailoverModeSuccessCallback = (cbObject: FailoverMode) => void;
 export type IntelligentAutoSuccessCallback = (cbObject: IntelligentAuto) => void;
 export type LanDaisyChainSuccessCallback = (cbObject: LanDaisyChain) => void;
 export type MirrorModeSuccessCallback = (cbObject: MirrorMode) => void;
-export type NoSignalImageModeSuccessCallback = (cbObject: NoSignalImageMode) => void;
+export type NoSignalImageModeSuccessCallback = (cbObject: NoSignalImageModeStatus) => void;
 export type PowerSaveModeSuccessCallback = (cbObject: PowerSaveMode) => void;
 export type QuietModeSuccessCallback = (cbObject: QuietMode) => void;
 export type RS232CConfigurationSuccessCallback = (cbObject: RS232CConfiguration) => void;
@@ -1064,7 +1070,7 @@ export class Signage {
 	setNoSignalImageMode(
 		successCb: ScapSuccessCallback,
 		failureCb: ScapFailureCallback,
-		options: NoSignalImageMode,
+		options: NoSignalImageModeState,
 	): void;
 	setPortraitMode(
 		successCb: ScapSuccessCallback,
@@ -1331,13 +1337,13 @@ export type RemoveFileOptions = {
 };
 
 export type StorageInfo = {
-	free: number;  // in KB
-	total: number; // in KB
-	used: number;  // in KB
+	free: string;  // in KB
+	total: string; // in KB
+	used: string;  // in KB
 	externalMemory: Record<string, {
-		free: number;  // in KB
-		total: number; // in KB
-		used: number;  // in KB
+		free: string;  // in KB
+		total: string; // in KB
+		used: string;  // in KB
 	}>;
 };
 
