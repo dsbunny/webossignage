@@ -1502,7 +1502,18 @@ export type AllOnOffTimers = {
 }
 
 export type HolidaySchedule = {
-	holidayScheduleList: {
+	holidaySchedule?: {
+		name?: string;
+		settings?: {
+			month?: number;
+			year?: number;
+			date?: number;
+			repeatBy?: "dayOfWeek" | "dayOfMonth" | "none";
+			days?: number;
+			repeat?: "monthly" | "yearly" | "none";
+		};
+	}[];
+	holidayScheduleList?: {
 		_id?: string;
 		name?: string;
 		settings?: {
@@ -1513,7 +1524,7 @@ export type HolidaySchedule = {
 			days?: number;
 			repeat?: "monthly" | "yearly" | "none";
 		};
-	};
+	}[];
 };
 
 export type OnOffTimer = {
