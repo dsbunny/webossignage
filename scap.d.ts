@@ -276,11 +276,41 @@ export type NetworkCheckupInfo = {
 };
 
 export type NetworkInfo = {
-	isInternetConnectionAvailable?: boolean;
+	isInternetConnectionAvailable: boolean;
+	wired: {
+		state: 'connected' | 'disconnected';
+		interfaceName?: string;
+		ipAddress?: string;
+		netmask?: string;
+		gateway?: string;
+		onInternet?: 'yes' | 'no';
+		method?: 'dhcp' | 'manual';
+		dns1?: string;
+		dns2?: string;
+		dns3?: string;
+		dns4?: string;
+		dns5?: string;
+		ipv6?: {
+			gateway?: string;
+			ipAddress?: string;
+			prefixLength?: number;
+			method?: 'dhcp' | 'manual';
+		};
+	};
+	wifi: {
+		state: 'connected' | 'disconnected';
+		interfaceName?: string;
+		ipAddress?: string;
+		netmask?: string;
+		gateway?: string;
+		onInternet?: 'yes' | 'no';
+		method?: 'dhcp' | 'manual';
+		dns1?: string;
+		dns2?: string;
+	};
+} | {
 	wired: {
 		enabled?: boolean;
-		state?: 'connected' | 'disconnected';
-		interfaceName?: string;
 		ipAddress?: string;
 		netmask?: string;
 		gateway?: string;
@@ -340,20 +370,22 @@ export type ProxyInfo = {
 
 export type SensorValues = {
 	backlight: number;
-	checkScreen?: {
+	checkScreen: {
 		colorValid: boolean;
 		drawRGB: number;
 		hexValue: string;
 		readRGB: number;
 	};
-	fan?: {
+	fan: {
 		closedLoop?: boolean;
 		openLoop?: boolean;
 	};
-	humidity?: number;
-	illuminance?: number;
-	rotation?: string;
-	temperature?: number;
+	humidity: number;
+	illuminance: number;
+	rotation: string;
+	temperature: number;
+} | {
+	backlight: number;
 };
 
 export type SystemUsageInfoOptions = {
@@ -763,7 +795,7 @@ export namespace Signage {
 	const UNDEFINED = "___undefined___";
 	const AutomaticStandbyMode = {
 		OFF: "off",
-		STANDBY_4HOURS: "4 hours",
+		STANDBY_4HOURS: "4 hours", // FIXME: Probably `4hours`
 	} as const;
 	const DigitalAudioInput = {
 		AUDIO_IN: "audioIn",
