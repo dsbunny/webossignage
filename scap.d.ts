@@ -334,21 +334,21 @@ export type ProxyInfo = {
 	enabled: boolean;
 	ipAddress: string;
 	port: number;
-	username?: string;
+	userName?: string;
 	password?: string;
 };
 
 export type SensorValues = {
 	backlight: number;
-	checkscreen?: {
+	checkScreen?: {
 		colorValid: boolean;
 		drawRGB: number;
 		hexValue: string;
 		readRGB: number;
 	};
 	fan?: {
-		closedLoop: boolean;
-		openLoop: boolean;
+		closedLoop?: boolean;
+		openLoop?: boolean;
 	};
 	humidity?: number;
 	illuminance?: number;
@@ -383,8 +383,8 @@ export type SystemUsageInfoCpu = {
 };
 
 export type SystemUsageInfo = {
-	cpus: SystemUsageInfoCpu[];
-	memory: SystemUsageInfoMemory;
+	cpus?: SystemUsageInfoCpu[];
+	memory?: SystemUsageInfoMemory;
 };
 
 export type BlockedPortListSuccessCallback = (cbObject: BlockedPortList) => void;
