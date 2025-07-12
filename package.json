@@ -7,9 +7,9 @@
 				"types": "./scap.d.ts"
 			}
 		},
-		"./custom": {
+		"./customjs": {
 			"import": {
-				"types": "./custom.d.ts"
+				"types": "./customjs.d.ts"
 			}
 		}
 	},
