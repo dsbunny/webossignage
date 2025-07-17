@@ -119,143 +119,145 @@ export type TimeZoneListSuccessCallback = (cbObject: TimeZoneList) => void;
 export type USBLockSuccessCallback = (cbObject: USBLock) => void;
 export type ServerPropertySuccessCallback = (cbObject: ServerProperty) => void;
 
-export namespace Configuration {
-	const AppMode = {
-		LOCAL: "local",
-		USB: "usb",
-		REMOTE: "remote",
-	} as const;
-	const AppType = {
-		IPK: "IPK",
-		ZIP: "ZIP",
-	} as const;
-	const PictureMode = {
-		APS: "eco",
-		CINEMA: "cinema",
-		EXPERT1: "expert1",
-		EXPERT2: "expert2",
-		GAME: "game",
-		SPORTS: "sports",
-		STANDARD: "normal",
-		VIVID: "vivid",
-	} as const;
-}
-export class Configuration {
-	clearCache(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getCurrentTime(
-		successCb: CurrentTimeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getLocaleList(
-		successCb: LocaleListSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getMasterPinStatus(
-		successCb: MasterPinStatusSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getOSDLanguage(
-		successCb: OSDLanguageSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getOSDLock(
-		successCb: OSDLockSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getPictureMode(
-		successCb: PictureModeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getPictureProperty(
-		successCb: PicturePropertySuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getProperty(
-		successCb: PropertySuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getProxyBypassList(
-		successCb: ProxyBypassListSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getServerProperty(
-		successCb: ServerPropertySuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getTimeZone(
-		successCb: TimeZoneSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getTimeZoneList(
-		successCb: TimeZoneListSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getUSBLock(
-		successCb: USBLockSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	restartApplication(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	setCurrentTime(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: CurrentTime,
-	): void;
-	setMasterPinStatus(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: MasterPinStatus,
-	): void;
-	setOSDLanguage(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: OSDLanguage,
-	): void;
-	setOSDLock(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: OSDLock,
-	): void;
-	setPictureMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: PictureMode,
-	): void;
-	setPictureProperty(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: PictureProperty,
-	): void;
-	setProperty(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: Property,
-	): void;
-	setProxyBypassList(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: ProxyBypassList,
-	): void;
-	setServerProperty(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: ServerProperty,
-	): void;
-	setTimeZone(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: TimeZone,
-	): void;
-	setUSBLock(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: USBLock,
-	): void;
+declare global {
+	export namespace Configuration {
+		const AppMode = {
+			LOCAL: "local",
+			USB: "usb",
+			REMOTE: "remote",
+		} as const;
+		const AppType = {
+			IPK: "IPK",
+			ZIP: "ZIP",
+		} as const;
+		const PictureMode = {
+			APS: "eco",
+			CINEMA: "cinema",
+			EXPERT1: "expert1",
+			EXPERT2: "expert2",
+			GAME: "game",
+			SPORTS: "sports",
+			STANDARD: "normal",
+			VIVID: "vivid",
+		} as const;
+	}
+	export class Configuration {
+		clearCache(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getCurrentTime(
+			successCb: CurrentTimeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getLocaleList(
+			successCb: LocaleListSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getMasterPinStatus(
+			successCb: MasterPinStatusSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getOSDLanguage(
+			successCb: OSDLanguageSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getOSDLock(
+			successCb: OSDLockSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getPictureMode(
+			successCb: PictureModeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getPictureProperty(
+			successCb: PicturePropertySuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getProperty(
+			successCb: PropertySuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getProxyBypassList(
+			successCb: ProxyBypassListSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getServerProperty(
+			successCb: ServerPropertySuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getTimeZone(
+			successCb: TimeZoneSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getTimeZoneList(
+			successCb: TimeZoneListSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getUSBLock(
+			successCb: USBLockSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		restartApplication(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		setCurrentTime(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: CurrentTime,
+		): void;
+		setMasterPinStatus(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: MasterPinStatus,
+		): void;
+		setOSDLanguage(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: OSDLanguage,
+		): void;
+		setOSDLock(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: OSDLock,
+		): void;
+		setPictureMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: PictureMode,
+		): void;
+		setPictureProperty(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: PictureProperty,
+		): void;
+		setProperty(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: Property,
+		): void;
+		setProxyBypassList(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: ProxyBypassList,
+		): void;
+		setServerProperty(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: ServerProperty,
+		): void;
+		setTimeZone(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: TimeZone,
+		): void;
+		setUSBLock(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: USBLock,
+		): void;
+	}
 }
 // #endregion
 
@@ -430,65 +432,67 @@ export type ProxyInfoSuccessCallback = (cbObject: ProxyInfo) => void;
 export type SensorValuesSuccessCallback = (cbObject: SensorValues) => void;
 export type SystemUsageInfoSuccessCallback = (cbObject: SystemUsageInfo) => void;
 
-export class DeviceInfo {
-	getBlockedPortList(
-		successCb: BlockedPortListSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getNetworkCheckupInfo(
-		successCb: NetworkCheckupInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getNetworkInfo(
-		successCb: NetworkInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getNetworkMacInfo(
-		successCb: NetworkMacInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getPlatformInfo(
-		successCb: PlatformInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getProxyInfo(
-		successCb: ProxyInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getSensorValues(
-		successCb: SensorValuesSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getSystemUsageInfo(
-		successCb: SystemUsageInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: SystemUsageInfoOptions,
-	): void;
-	setBlockedPortList(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: BlockedPortList,
-	): void;
-	setNetworkCheckupInfo(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: NetworkCheckupInfo,
-	): void;
-	setNetworkInfo(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: NetworkInfo,
-	): void;
-	setProxyInfo(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: ProxyInfo,
-	): void;
-	setSensorValues(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: SensorValues,
-	): void;
+declare global {
+	export class DeviceInfo {
+		getBlockedPortList(
+			successCb: BlockedPortListSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getNetworkCheckupInfo(
+			successCb: NetworkCheckupInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getNetworkInfo(
+			successCb: NetworkInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getNetworkMacInfo(
+			successCb: NetworkMacInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getPlatformInfo(
+			successCb: PlatformInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getProxyInfo(
+			successCb: ProxyInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getSensorValues(
+			successCb: SensorValuesSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getSystemUsageInfo(
+			successCb: SystemUsageInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: SystemUsageInfoOptions,
+		): void;
+		setBlockedPortList(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: BlockedPortList,
+		): void;
+		setNetworkCheckupInfo(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: NetworkCheckupInfo,
+		): void;
+		setNetworkInfo(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: NetworkInfo,
+		): void;
+		setProxyInfo(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: ProxyInfo,
+		): void;
+		setSensorValues(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: SensorValues,
+		): void;
+	}
 }
 // #endregion
 
@@ -507,11 +511,13 @@ export type ExternalInputList = {
 
 export type InputSourceListSuccessCallback = (info: ExternalInputList) => void;
 
-export class InputSource {
-	getExternalInputList(
-		successCb: InputSourceListSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
+declare global {
+	export class InputSource {
+		getExternalInputList(
+			successCb: InputSourceListSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+	}
 }
 // #endregion
 
@@ -553,75 +559,77 @@ export type PowerOnDelaySuccessCallback = (cbObject: PowerOnDelay) => void;
 export type PowerStatusSuccessCallback = (cbObject: PowerStatus) => void;
 export type DisplayModeSuccessCallback = (cbObject: DisplayMode) => void;
 
-export namespace Power {
-	const DisplayMode = {
-		DISPLAY_OFF: "Screen Off",
-		DISPLAY_ON: "Active",
-	} as const;
-	const DPMSignalType = {
-		CLOCK: "clock",
-		CLOCK_AND_DATA: "clockAndData",
-	} as const;
-	const PMMode = {
-		PowerOff: "powerOff",
-		ScreenOff: "screenOff",
-		ScreenOffAlways: "screenOffAlways",
-		ScreenOffBacklight: "screenOffBacklight",
-		SustainAspectRatio: "sustainAspectRatio",
-		NetworkReady: "networkReady",
-	} as const;
-	const PowerCommand = {
-		REBOOT: "reboot",
-		SHUTDOWN: "powerOff",
-	} as const;
-}
-export class Power {
-	getDPMWakeup(
-		successCb: DPMWakeupSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	executePowerCommand(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: PowerCommandOptions,
-	): void;
-	getPMMode(
-		successCb: PMModeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getPowerOnDelay(
-		successCb: PowerOnDelaySuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getPowerStatus(
-		successCb: PowerStatusSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	setDPMWakeup(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: DPMWakeup,
-	): void;
-	setDisplayMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: DisplayMode
-	): void;
-	setPMMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: PMMode
-	): void;
-	setPowerOnDelay(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: PowerOnDelay,
-	): void;
-	enableWakeOnLan(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: WakeOnLan,
-	): void;
+declare global {
+	export namespace Power {
+		const DisplayMode = {
+			DISPLAY_OFF: "Screen Off",
+			DISPLAY_ON: "Active",
+		} as const;
+		const DPMSignalType = {
+			CLOCK: "clock",
+			CLOCK_AND_DATA: "clockAndData",
+		} as const;
+		const PMMode = {
+			PowerOff: "powerOff",
+			ScreenOff: "screenOff",
+			ScreenOffAlways: "screenOffAlways",
+			ScreenOffBacklight: "screenOffBacklight",
+			SustainAspectRatio: "sustainAspectRatio",
+			NetworkReady: "networkReady",
+		} as const;
+		const PowerCommand = {
+			REBOOT: "reboot",
+			SHUTDOWN: "powerOff",
+		} as const;
+	}
+	export class Power {
+		getDPMWakeup(
+			successCb: DPMWakeupSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		executePowerCommand(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: PowerCommandOptions,
+		): void;
+		getPMMode(
+			successCb: PMModeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getPowerOnDelay(
+			successCb: PowerOnDelaySuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getPowerStatus(
+			successCb: PowerStatusSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		setDPMWakeup(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: DPMWakeup,
+		): void;
+		setDisplayMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: DisplayMode
+		): void;
+		setPMMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: PMMode
+		): void;
+		setPowerOnDelay(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: PowerOnDelay,
+		): void;
+		enableWakeOnLan(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: WakeOnLan,
+		): void;
+	}
 }
 // #endregion
 
@@ -653,25 +661,27 @@ export type UnregisterServerCertificateListSuccessCallback = (
 	cbObject: RemovedDomainNameList,
 ) => void;
 
-export class Security {
-	getServerCertificateList(
-		successCb: ServerCertificateListSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	registerServerCertificateList(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: ServerCertificateListState,
-	): void;
-	unregisterAllServerCertificateList(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	unregisterServerCertificateList(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: DomainNameList,
-	): void;
+declare global {
+	export class Security {
+		getServerCertificateList(
+			successCb: ServerCertificateListSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		registerServerCertificateList(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: ServerCertificateListState,
+		): void;
+		unregisterAllServerCertificateList(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		unregisterServerCertificateList(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: DomainNameList,
+		): void;
+	}
 }
 // #endregion
 
@@ -803,310 +813,312 @@ export type TileInfoSuccessCallback = (cbObject: TileInfo) => void;
 export type UsageDataSuccessCallback = (cbObject: UsageData) => void;
 export type UsagePermissionSuccessCallback = (cbObject: UsagePermission) => void;
 
-export namespace Signage {
-	const UNDEFINED = "___undefined___";
-	const AutomaticStandbyMode = {
-		OFF: "off",
-		STANDBY_4HOURS: "4 hours", // FIXME: Probably `4hours`
-	} as const;
-	const DigitalAudioInput = {
-		AUDIO_IN: "audioIn",
-		HDMI_DP: "hdmi",
-	} as const;
-	const DpmMode = {
-		OFF: "off",
-		POWER_OFF_5SECOND: "5sec",
-		POWER_OFF_10SECOND: "10sec",
-		POWER_OFF_15SECOND: "15sec",
-		POWER_OFF_1MINUTE: "1min",
-		POWER_OFF_3MINUTE: "3min",
-		POWER_OFF_5MINUTE: "5min",
-		POWER_OFF_10MINUTE: "10min",
-	} as const;
-	const EventType = {
-		CURRENT_TEMPERATURE: "CURRENT_TEMPERATURE",
-		FAN_STATUS: "FAN_STATUS",
-		LAMP_STATUS: "LAMP_STATUS",
-		SCREEN_STATUS: "SCREEN_STATUS",
-		SIGNAL_STATUS: "SIGNAL_STATUS",
-	} as const;
-	const FailoverMode = {
-		AUTO: "auto",
-		MANUAL: "manual",
-		OFF: "off",
-		UNDEFINED: "___undefined___",
-	} as const;
-	const ImgResolution = {
-		FHD: "FHD",
-		HD: "HD",
-	} as const;
-	const IsmMethod = {
-		COLORWASH: "COLORWASH",
-		INVERSION: "INVERSION",
-		NORMAL: "NORMAL",
-		ORBITER: "ORBITER",
-		USERIMAGE: "USERIMAGE",
-		USERVIDEO: "USERVIDEO",
-		WASHINGBAR: "WASHINGBAR",
-		WHITEWASH: "WHITEWASH",
-	} as const;
-	const KeyCode = {
-		AUTO: 1102,
-		BACK: 461,
-		BLUE: 406,
-		BRIGHTNESS_DOWN: 1101,
-		BRIGHTNESS_UP: 1100,
-		CLEAR: 8,
-		DISC_POWER_OFF: 706,
-		DISC_POWER_ON: 705,
-		DOWN: 40,
-		ENERGY_SAVING: 709,
-		ENTER: 10,
-		EXIT: 601,
-		FAST_FORWARD: 417,
-		GREEN: 404,
-		INFO: 1109,
-		INPUT: 712,
-		LEFT: 37,
-		LG_3D: 737,
-		MENU: 627,
-		MUTE: 449,
-		NUM_0: 48,
-		NUM_1: 49,
-		NUM_2: 50,
-		NUM_3: 51,
-		NUM_4: 52,
-		NUM_5: 53,
-		NUM_6: 54,
-		NUM_7: 55,
-		NUM_8: 56,
-		NUM_9: 57,
-		OPT_1aA: 1103,
-		PAUSE: 19,
-		PLAY: 415,
-		POWER: 409,
-		PSM: 1108,
-		RATIO: 772,
-		RED: 403,
-		REWIND: 412,
-		RIGHT: 39,
-		SIMPLINK: 724,
-		SMART_HOME: 734,
-		SMENU: 1106,
-		STOP: 413,
-		TILE: 1107,
-		UP: 38,
-		VOL_DOWN: 448,
-		VOL_UP: 447,
-		WBALANCE: 1105,
-		YELLOW: 405,
-	} as const;
-	const KeyOperationMode = {
-		ALLOW_ALL: "normal",
-		BLOCK_ALL: "blockAll",
-		POWER_ONLY: "usePwrOnly",
-	} as const;
-	const MonitoringSource = {
-		FAN: "FAN",
-		LAMP: "LAMP",
-		SCREEN: "SCREEN",
-		SIGNAL: "SIGNAL",
-		THERMOMETER: "THERMOMETER",
-	} as const;
-	const OsdPortraitMode = {
-		OFF: "off",
-		ON: "90",
-		UNDEFINED: "___undefined___",
-	} as const;
-	namespace RS232C {
-		const BaudRate = {
-			BR_1024000: 1_024_000,
-			BR_110: 110,
-			BR_115200: 115_200,
-			BR_1200: 1_200,
-			BR_128000: 128_000,
-			BR_14400: 14_400,
-			BR_19200: 19_200,
-			BR_230400: 230_400,
-			BR_2400: 2_400,
-			BR_256000: 256_000,
-			BR_300: 300,
-			BR_38400: 38_400,
-			BR_4800: 4_800,
-			BR_512000: 512_000,
-			BR_57600: 57_600,
-			BR_600: 600,
-			BR_768000: 768_000,
-			BR_921600: 921_600,
-			BR_9600: 9_600,
-			BR_UNKNOWN: 0,
+declare global {
+	export namespace Signage {
+		const UNDEFINED = "___undefined___";
+		const AutomaticStandbyMode = {
+			OFF: "off",
+			STANDBY_4HOURS: "4 hours", // FIXME: Probably `4hours`
 		} as const;
-		const DataBit = {
-			DB_7: 7,
-			DB_8: 8,
-			DB_UNKNOWN: 0,
+		const DigitalAudioInput = {
+			AUDIO_IN: "audioIn",
+			HDMI_DP: "hdmi",
 		} as const;
-		const FlowControl = {
-			HARDWARE: 3,
-			NONE: 1,
-			UNKNOWN: 0,
-			XON_XOFF: 2,
+		const DpmMode = {
+			OFF: "off",
+			POWER_OFF_5SECOND: "5sec",
+			POWER_OFF_10SECOND: "10sec",
+			POWER_OFF_15SECOND: "15sec",
+			POWER_OFF_1MINUTE: "1min",
+			POWER_OFF_3MINUTE: "3min",
+			POWER_OFF_5MINUTE: "5min",
+			POWER_OFF_10MINUTE: "10min",
 		} as const;
-		const Mode = {
-			MODE_0: 0,
-			MODE_1: 1,
+		const EventType = {
+			CURRENT_TEMPERATURE: "CURRENT_TEMPERATURE",
+			FAN_STATUS: "FAN_STATUS",
+			LAMP_STATUS: "LAMP_STATUS",
+			SCREEN_STATUS: "SCREEN_STATUS",
+			SIGNAL_STATUS: "SIGNAL_STATUS",
 		} as const;
-		const Parity = {
-			EVEN: 2,
-			NONE: 1,
-			ODD: 3,
-			UNKNOWN: 0,
+		const FailoverMode = {
+			AUTO: "auto",
+			MANUAL: "manual",
+			OFF: "off",
+			UNDEFINED: "___undefined___",
 		} as const;
-		const StopBit = {
-			SB_1: 1,
-			SB_2: 2,
-			SB_UNKNOWN: 0,
+		const ImgResolution = {
+			FHD: "FHD",
+			HD: "HD",
+		} as const;
+		const IsmMethod = {
+			COLORWASH: "COLORWASH",
+			INVERSION: "INVERSION",
+			NORMAL: "NORMAL",
+			ORBITER: "ORBITER",
+			USERIMAGE: "USERIMAGE",
+			USERVIDEO: "USERVIDEO",
+			WASHINGBAR: "WASHINGBAR",
+			WHITEWASH: "WHITEWASH",
+		} as const;
+		const KeyCode = {
+			AUTO: 1102,
+			BACK: 461,
+			BLUE: 406,
+			BRIGHTNESS_DOWN: 1101,
+			BRIGHTNESS_UP: 1100,
+			CLEAR: 8,
+			DISC_POWER_OFF: 706,
+			DISC_POWER_ON: 705,
+			DOWN: 40,
+			ENERGY_SAVING: 709,
+			ENTER: 10,
+			EXIT: 601,
+			FAST_FORWARD: 417,
+			GREEN: 404,
+			INFO: 1109,
+			INPUT: 712,
+			LEFT: 37,
+			LG_3D: 737,
+			MENU: 627,
+			MUTE: 449,
+			NUM_0: 48,
+			NUM_1: 49,
+			NUM_2: 50,
+			NUM_3: 51,
+			NUM_4: 52,
+			NUM_5: 53,
+			NUM_6: 54,
+			NUM_7: 55,
+			NUM_8: 56,
+			NUM_9: 57,
+			OPT_1aA: 1103,
+			PAUSE: 19,
+			PLAY: 415,
+			POWER: 409,
+			PSM: 1108,
+			RATIO: 772,
+			RED: 403,
+			REWIND: 412,
+			RIGHT: 39,
+			SIMPLINK: 724,
+			SMART_HOME: 734,
+			SMENU: 1106,
+			STOP: 413,
+			TILE: 1107,
+			UP: 38,
+			VOL_DOWN: 448,
+			VOL_UP: 447,
+			WBALANCE: 1105,
+			YELLOW: 405,
+		} as const;
+		const KeyOperationMode = {
+			ALLOW_ALL: "normal",
+			BLOCK_ALL: "blockAll",
+			POWER_ONLY: "usePwrOnly",
+		} as const;
+		const MonitoringSource = {
+			FAN: "FAN",
+			LAMP: "LAMP",
+			SCREEN: "SCREEN",
+			SIGNAL: "SIGNAL",
+			THERMOMETER: "THERMOMETER",
+		} as const;
+		const OsdPortraitMode = {
+			OFF: "off",
+			ON: "90",
+			UNDEFINED: "___undefined___",
+		} as const;
+		namespace RS232C {
+			const BaudRate = {
+				BR_1024000: 1_024_000,
+				BR_110: 110,
+				BR_115200: 115_200,
+				BR_1200: 1_200,
+				BR_128000: 128_000,
+				BR_14400: 14_400,
+				BR_19200: 19_200,
+				BR_230400: 230_400,
+				BR_2400: 2_400,
+				BR_256000: 256_000,
+				BR_300: 300,
+				BR_38400: 38_400,
+				BR_4800: 4_800,
+				BR_512000: 512_000,
+				BR_57600: 57_600,
+				BR_600: 600,
+				BR_768000: 768_000,
+				BR_921600: 921_600,
+				BR_9600: 9_600,
+				BR_UNKNOWN: 0,
+			} as const;
+			const DataBit = {
+				DB_7: 7,
+				DB_8: 8,
+				DB_UNKNOWN: 0,
+			} as const;
+			const FlowControl = {
+				HARDWARE: 3,
+				NONE: 1,
+				UNKNOWN: 0,
+				XON_XOFF: 2,
+			} as const;
+			const Mode = {
+				MODE_0: 0,
+				MODE_1: 1,
+			} as const;
+			const Parity = {
+				EVEN: 2,
+				NONE: 1,
+				ODD: 3,
+				UNKNOWN: 0,
+			} as const;
+			const StopBit = {
+				SB_1: 1,
+				SB_2: 2,
+				SB_UNKNOWN: 0,
+			}
 		}
 	}
-}
-export class Signage {
-	captureScreen(
-		successCb: CaptureScreenSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options?: CaptureScreenOptions,
-	): void;
-	getFailoverMode(
-		successCb: FailoverModeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getIntelligentAuto(
-		successCb: IntelligentAutoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getLanDaisyChain(
-		successCb: LanDaisyChainSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getMirrorMode(
-		successCb: MirrorModeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getNoSignalImageMode(
-		successCb: NoSignalImageModeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getPowerSaveMode(
-		successCb: PowerSaveModeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getQuietMode(
-		successCb: QuietModeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getRS232CConfiguration(
-		successCb: RS232CConfigurationSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getSignageInfo(
-		successCb: SignageInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getSimplinkStatus(
-		successCb: SimplinkStatusSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getTileInfo(
-		successCb: TileInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getUsageData(
-		successCb: UsageDataSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getUsagePermission(
-		successCb: UsagePermissionSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	enableCheckScreen(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: CheckScreen,
-	): void;
-	reset(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: ResetOptions,
-	): void;
-	setDigitalAudioInputMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: DigitalAudioInputMode,
-	): void;
-	setFailoverMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: FailoverMode,
-	): void;
-	setIntelligentAuto(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: IntelligentAuto,
-	): void;
-	setIsmMethod(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: IsmMethod,
-	): void;
-	setLanDaisyChain(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: LanDaisyChain,
-	): void;
-	setMirrorMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: MirrorMode,
-	): void;
-	setNoSignalImageMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: NoSignalImageModeState,
-	): void;
-	setPortraitMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: PortraitMode,
-	): void;
-	setPowerSaveMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: { powerSaveMode?: PowerSaveMode },
-	): void;
-	setQuietMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: QuietMode,
-	): void;
-	setRS232CConfiguration(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: RS232CConfiguration,
-	): void;
-	setSimplinkStatus(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: SimplinkStatus,
-	): void;
-	setTileInfo(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: TileInfo,
-	): void;
-	setUsagePermission(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: UsagePermission,
-	): void;
+	export class Signage {
+		captureScreen(
+			successCb: CaptureScreenSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options?: CaptureScreenOptions,
+		): void;
+		getFailoverMode(
+			successCb: FailoverModeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getIntelligentAuto(
+			successCb: IntelligentAutoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getLanDaisyChain(
+			successCb: LanDaisyChainSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getMirrorMode(
+			successCb: MirrorModeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getNoSignalImageMode(
+			successCb: NoSignalImageModeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getPowerSaveMode(
+			successCb: PowerSaveModeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getQuietMode(
+			successCb: QuietModeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getRS232CConfiguration(
+			successCb: RS232CConfigurationSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getSignageInfo(
+			successCb: SignageInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getSimplinkStatus(
+			successCb: SimplinkStatusSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getTileInfo(
+			successCb: TileInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getUsageData(
+			successCb: UsageDataSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getUsagePermission(
+			successCb: UsagePermissionSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		enableCheckScreen(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: CheckScreen,
+		): void;
+		reset(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: ResetOptions,
+		): void;
+		setDigitalAudioInputMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: DigitalAudioInputMode,
+		): void;
+		setFailoverMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: FailoverMode,
+		): void;
+		setIntelligentAuto(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: IntelligentAuto,
+		): void;
+		setIsmMethod(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: IsmMethod,
+		): void;
+		setLanDaisyChain(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: LanDaisyChain,
+		): void;
+		setMirrorMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: MirrorMode,
+		): void;
+		setNoSignalImageMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: NoSignalImageModeState,
+		): void;
+		setPortraitMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: PortraitMode,
+		): void;
+		setPowerSaveMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: { powerSaveMode?: PowerSaveMode },
+		): void;
+		setQuietMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: QuietMode,
+		): void;
+		setRS232CConfiguration(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: RS232CConfiguration,
+		): void;
+		setSimplinkStatus(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: SimplinkStatus,
+		): void;
+		setTileInfo(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: TileInfo,
+		): void;
+		setUsagePermission(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: UsagePermission,
+		): void;
+	}
 }
 // #endregion
 
@@ -1143,58 +1155,60 @@ export type SoundModeSuccessCallback = (cbObject: SoundMode) => void;
 export type SoundOutSuccessCallback = (cbObject: SoundOut) => void;
 export type SoundStatusSuccessCallback = (cbObject: SoundStatus) => void;
 
-export namespace Sound {
-	const SoundMode = {
-		STANDARD: "standard",
-		MOVIE: "movie",
-		NEWS: "news",
-		SPORTS: "sports",
-		MUSIC: "music",
-		GAME: "game",
-	} as const;
-	const SpeakerType = {
-		SignageSpeaker: "tv_speaker",
-		LGSoundSync: "bt_soundbar",
-	} as const;
-}
-export class Sound {
-	getSoundMode(
-		successCb: SoundModeSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getSoundOut(
-		successCb: SoundOutSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getSoundStatus(
-		successCb: SoundStatusSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	setExternalSpeaker(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: ExternalSpeaker,
-	): void;
-	setMuted(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: Muted,
-	): void;
-	setSoundMode(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: SoundMode,
-	): void;
-	setSoundOut(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: SoundOut,
-	): void;
-	setVolumeLevel(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: VolumeLevel,
-	): void;
+declare global {
+	export namespace Sound {
+		const SoundMode = {
+			STANDARD: "standard",
+			MOVIE: "movie",
+			NEWS: "news",
+			SPORTS: "sports",
+			MUSIC: "music",
+			GAME: "game",
+		} as const;
+		const SpeakerType = {
+			SignageSpeaker: "tv_speaker",
+			LGSoundSync: "bt_soundbar",
+		} as const;
+	}
+	export class Sound {
+		getSoundMode(
+			successCb: SoundModeSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getSoundOut(
+			successCb: SoundOutSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getSoundStatus(
+			successCb: SoundStatusSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		setExternalSpeaker(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: ExternalSpeaker,
+		): void;
+		setMuted(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: Muted,
+		): void;
+		setSoundMode(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: SoundMode,
+		): void;
+		setSoundOut(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: SoundOut,
+		): void;
+		setVolumeLevel(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: VolumeLevel,
+		): void;
+	}
 }
 // #endregion
 
@@ -1397,151 +1411,153 @@ export type StorageInfoSuccessCallback = (cbObject: StorageInfo) => void;
 export type USBInfoSuccessCallback = (cbObject: USBInfo) => void;
 
 // WebOS namespace conflicts with the global Storage interface.
-// @ts-ignore
-export namespace Storage {
-	const AppMode = {
-		LOCAL: "local",
-		USB: "usb",
-	} as const;
-	const AppType = {
-		IPK: "IPK",
-		ZIP: "ZIP",
-	} as const;
-}
-export class Storage {
-	changeLogoImage(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: ChangeLogoImageOptions,
-	)
-	copyFile(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: CopyFileOptions,
-	): void;
-	decryptFile(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: DecryptFileOptions,
-	): void;
-	downloadFile(
-		successCb: DownloadFileSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: DownloadFileOptions,
-	): void;
-	downloadFirmware(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: DownloadFirmwareOptions,
-	): void;
-	exists(
-		successCb: ExistsSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: FilePath,
-	): void;
-	exportSettingData(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: FilePath,
-	): void;
-	formatUSB(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: FormatUSBOptions,
-	): void;
-	fsync(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options?: FilePath,
-	): void;
-	getDownloadFileStatus(
-		successCb: DownloadFileStatusSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: Ticket & { subscribe?: boolean },
-	): void;
-	getFirmwareUpgradeStatus(
-		successCb: FirmwareUpgradeStatusSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getMD5Hash(
-		successCb: MD5HashSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: MD5FilePath,
-	): void;
-	getStorageInfo(
-		successCb: StorageInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getUSBInfo(
-		successCb: USBInfoSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	importSettingData(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: FilePath,
-	): void;
-	listFiles(
-		successCb: ListFilesSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: FilePath,
-	): void;
-	mkdir(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: FilePath,
-	): void;
-	moveFile(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: MoveFileOptions,
-	): void;
-	readFile(
-		successCb: ReadFileSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: ReadFileOptions,
-	): void;
-	removeAll(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: RemoveAllOptions,
-	): void;
-	// A running app cannot remove itself by calling this API.
-	removeApplication(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: RemoveApplication,
-	): void;
-	removeFile(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: RemoveFileOptions,
-	): void;
-	statFile(
-		successCb: StatFileSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: FilePath,
-	): void;
-	unzipFile(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: UnzipFileOptions,
-	): void;
-	upgradeApplication(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: UpgradeApplicationOptions,
-	): void;
-	upgradeFirmware(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options?: UpgradeFirmwareOptions,
-	): void;
-	writeFile(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: WriteFileOptions,
-	): void;
+declare global {
+	// @ts-ignore
+	export namespace Storage {
+		const AppMode = {
+			LOCAL: "local",
+			USB: "usb",
+		} as const;
+		const AppType = {
+			IPK: "IPK",
+			ZIP: "ZIP",
+		} as const;
+	}
+	export class Storage {
+		changeLogoImage(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: ChangeLogoImageOptions,
+		)
+		copyFile(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: CopyFileOptions,
+		): void;
+		decryptFile(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: DecryptFileOptions,
+		): void;
+		downloadFile(
+			successCb: DownloadFileSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: DownloadFileOptions,
+		): void;
+		downloadFirmware(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: DownloadFirmwareOptions,
+		): void;
+		exists(
+			successCb: ExistsSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: FilePath,
+		): void;
+		exportSettingData(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: FilePath,
+		): void;
+		formatUSB(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: FormatUSBOptions,
+		): void;
+		fsync(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options?: FilePath,
+		): void;
+		getDownloadFileStatus(
+			successCb: DownloadFileStatusSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: Ticket & { subscribe?: boolean },
+		): void;
+		getFirmwareUpgradeStatus(
+			successCb: FirmwareUpgradeStatusSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getMD5Hash(
+			successCb: MD5HashSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: MD5FilePath,
+		): void;
+		getStorageInfo(
+			successCb: StorageInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getUSBInfo(
+			successCb: USBInfoSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		importSettingData(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: FilePath,
+		): void;
+		listFiles(
+			successCb: ListFilesSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: FilePath,
+		): void;
+		mkdir(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: FilePath,
+		): void;
+		moveFile(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: MoveFileOptions,
+		): void;
+		readFile(
+			successCb: ReadFileSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: ReadFileOptions,
+		): void;
+		removeAll(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: RemoveAllOptions,
+		): void;
+		// A running app cannot remove itself by calling this API.
+		removeApplication(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: RemoveApplication,
+		): void;
+		removeFile(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: RemoveFileOptions,
+		): void;
+		statFile(
+			successCb: StatFileSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: FilePath,
+		): void;
+		unzipFile(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: UnzipFileOptions,
+		): void;
+		upgradeApplication(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: UpgradeApplicationOptions,
+		): void;
+		upgradeFirmware(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options?: UpgradeFirmwareOptions,
+		): void;
+		writeFile(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: WriteFileOptions,
+		): void;
+	}
 }
 // #endregion
 
@@ -1591,54 +1607,56 @@ export type TimerId = {
 export type AllOnOffTimersSuccessCallback = (cbObject: AllOnOffTimers) => void;
 export type HolidayScheduleSuccessCallback = (cbObject: HolidaySchedule) => void;
 
-export namespace Time {
-	const TimerType = {
-		OFFTIMER: "OFFTIMER",
-		ONTIMER: "ONTIMER",
-	} as const;
-	const TimerWeek = {
-		MONDAY: 1,
-		TUESDAY: 2,
-		WEDNESDAY: 4,
-		THURSDAY: 8,
-		FRIDAY: 16,
-		SATURDAY: 32,
-		SUNDAY: 64,
-		EVERYDAY: 127,
-	} as const;
-}
-export class Time {
-	cancelOnOffTimer(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: TimerId,
-	): void;
-	clearAllOnOffTimers(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	clearHolidaySchedule(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getAllOnOffTimers(
-		successCb: AllOnOffTimersSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	getHolidaySchedule(
-		successCb: HolidayScheduleSuccessCallback,
-		failureCb: ScapFailureCallback,
-	): void;
-	reserveOnOffTimer(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: OnOffTimer,
-	): void;
-	setHolidaySchedule(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: HolidaySchedule,
-	): void;
+declare global {
+	export namespace Time {
+		const TimerType = {
+			OFFTIMER: "OFFTIMER",
+			ONTIMER: "ONTIMER",
+		} as const;
+		const TimerWeek = {
+			MONDAY: 1,
+			TUESDAY: 2,
+			WEDNESDAY: 4,
+			THURSDAY: 8,
+			FRIDAY: 16,
+			SATURDAY: 32,
+			SUNDAY: 64,
+			EVERYDAY: 127,
+		} as const;
+	}
+	export class Time {
+		cancelOnOffTimer(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: TimerId,
+		): void;
+		clearAllOnOffTimers(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		clearHolidaySchedule(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getAllOnOffTimers(
+			successCb: AllOnOffTimersSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		getHolidaySchedule(
+			successCb: HolidayScheduleSuccessCallback,
+			failureCb: ScapFailureCallback,
+		): void;
+		reserveOnOffTimer(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: OnOffTimer,
+		): void;
+		setHolidaySchedule(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: HolidaySchedule,
+		): void;
+	}
 }
 // #endregion
 
@@ -1647,11 +1665,13 @@ export type Toast = {
 	msg: string;
 };
 
-export class Utility {
-	createToast(
-		successCb: ScapSuccessCallback,
-		failureCb: ScapFailureCallback,
-		options: Toast,
-	): void;
+declare global {
+	export class Utility {
+		createToast(
+			successCb: ScapSuccessCallback,
+			failureCb: ScapFailureCallback,
+			options: Toast,
+		): void;
+	}
 }
 // #endregion
