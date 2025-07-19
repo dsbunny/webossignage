@@ -373,7 +373,7 @@ export type ProxyInfo = {
 };
 
 export type SensorValuesStatus = {
-	backlight: string;
+	backlight: number | string;
 	checkScreen: {
 		colorValid: boolean;
 		drawRGB: number;
@@ -1134,7 +1134,7 @@ export type Muted = {
 
 export type SoundMode = {
 	mode: Sound.SoundMode;
-	balance?: string;  // -50 to 50
+	balance?: number | string;  // -50 to 50
 };
 
 export type SoundOut = {
