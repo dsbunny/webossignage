@@ -255,7 +255,7 @@ declare global {
 		setTimeZone(
 			successCb: ScapSuccessCallback,
 			failureCb: ScapFailureCallback,
-			options: TimeZone,
+			options: TimeZoneState,
 		): void;
 		setUSBLock(
 			successCb: ScapSuccessCallback,
