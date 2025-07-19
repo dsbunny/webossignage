@@ -379,14 +379,14 @@ export type SensorValuesStatus = {
 		drawRGB: number;
 		hexValue: string;
 		readRGB: number;
-	};
+	} | "Unsupported or Error";
 	fan: {
 		closedLoop?: boolean;
 		openLoop?: boolean;
-	};
-	humidity: number;
-	illuminance: number;
-	rotation: "0" | "90" | "180" | "270";
+	} | "Unsupported or Error";
+	humidity: number | "Unsupported or Error";
+	illuminance: number | "Unsupported or Error";
+	rotation: "0" | "90" | "180" | "270" | "Unsupported or Error";
 	temperature: number;
 };
 export type SensorValuesState = {
