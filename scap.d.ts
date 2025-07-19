@@ -177,6 +177,7 @@ declare global {
 		getProperty(
 			successCb: PropertySuccessCallback,
 			failureCb: ScapFailureCallback,
+			options: string,
 		): void;
 		getProxyBypassList(
 			successCb: ProxyBypassListSuccessCallback,
