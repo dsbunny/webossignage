@@ -97,6 +97,10 @@ export type TimeZone = {
 	city: string;
 };
 
+export type TimeZoneState = {
+	timeZone: TimeZone;
+};
+
 export type TimeZoneList = {
 	timeZone: TimeZone[];
 };
@@ -114,7 +118,7 @@ export type PictureModeSuccessCallback = (cbObject: PictureMode) => void;
 export type PicturePropertySuccessCallback = (cbObject: PictureProperty) => void;
 export type PropertySuccessCallback = (cbObject: Property) => void;
 export type ProxyBypassListSuccessCallback = (cbObject: ProxyBypassList) => void;
-export type TimeZoneSuccessCallback = (cbObject: TimeZone) => void;
+export type TimeZoneSuccessCallback = (cbObject: TimeZoneState) => void;
 export type TimeZoneListSuccessCallback = (cbObject: TimeZoneList) => void;
 export type USBLockSuccessCallback = (cbObject: USBLock) => void;
 export type ServerPropertySuccessCallback = (cbObject: ServerProperty) => void;
