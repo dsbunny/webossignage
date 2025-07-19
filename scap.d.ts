@@ -62,7 +62,7 @@ export type PictureProperty = {
 	tint?: number;
 	colorTemperature?: number;
 	dynamicContrast?: 'off' | 'low' | 'medium' | 'high';
-	superResolution?: 'off' | 'low' | 'medium' | 'high';
+	superResolution?: 'off' | 'low' | 'medium' | 'high' | 'Unsupported';
 	noiseReduction?: 'auto' | 'off' | 'low' | 'medium' | 'high';
 	mpegNoiseReduction?: 'auto' | 'off' | 'low' | 'medium' | 'high';
 	blackLevel?: 'low' | 'high';
