@@ -83,19 +83,20 @@ export type SlaveOptions = {
 
 export type MasterSuccessCallback = (cbObject: Master) => void;
 
-export namespace Custom {
-
-	const enum CLEARBROWSINGDATATYPES {
-		ALL = "all",
-		APPCACHE = "appcache",
-		CACHE = "cache",
-		CHANNELIDS = "channelIDs",
-		COOKIES = "cookies",
-		FILESYSTEMS = "fileSystems",
-		INDEXEDDB = "indexedDB",
-		LOCALSTORAGE = "localStorage",
-		SERVICEWORKERS = "serviceWorkers",
-		WEBSQL = "webSQL",
+declare global {
+	namespace Custom {
+		const enum CLEARBROWSINGDATATYPES {
+			ALL = "all",
+			APPCACHE = "appcache",
+			CACHE = "cache",
+			CHANNELIDS = "channelIDs",
+			COOKIES = "cookies",
+			FILESYSTEMS = "fileSystems",
+			INDEXEDDB = "indexedDB",
+			LOCALSTORAGE = "localStorage",
+			SERVICEWORKERS = "serviceWorkers",
+			WEBSQL = "webSQL",
+		}
 	}
 
 	// #region Configuration
@@ -157,4 +158,11 @@ export namespace Custom {
 		): void;
 	}
 	// #endregion
+
+	// #region Custom
+	class Custom {
+		Configuration: Configuration;
+		Signage: Signage;
+		VideoSync: VideoSync;
+	}
 }
