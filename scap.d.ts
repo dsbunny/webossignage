@@ -733,7 +733,7 @@ export type MirrorMode = {
 };
 
 export type NoSignalImageModeStatus = {
-	noSignalImage: "on" | "off";
+	enabled: "on" | "off";
 };
 export type NoSignalImageModeState = {
 	noSignalImageMode: "on" | "off";
