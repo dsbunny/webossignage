@@ -89,6 +89,7 @@ export type ServerProperty = {
 	fqdnMode: boolean;
 	fqdnAddr: string;
 	appLaunchDeviceId?: string;
+	autoSet?: string;
 };
 
 export type TimeZone = {

@@ -1,4 +1,7 @@
 # Changelog
+## v1.0.4
+- Add `ServerProperty.autoSet` per SCAP 1.8 support.
+
 ## v1.0.3
 - `Configuration.getProperty()` must provide 3 parameters.
 - Add `"Unsupported or Error"` response on sensors.
