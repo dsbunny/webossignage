@@ -1164,12 +1164,12 @@ export type SoundStatusSuccessCallback = (cbObject: SoundStatus) => void;
 declare global {
 	export namespace Sound {
 		const SoundMode = {
-			STANDARD: "standard",
-			MOVIE: "movie",
-			NEWS: "news",
-			SPORTS: "sports",
-			MUSIC: "music",
-			GAME: "game",
+			Standard: "standard",
+			Cinema: "movie",
+			ClearVoice: "news",
+			Sports: "sports",
+			Music: "music",
+			Game: "game",
 		} as const;
 		const SpeakerType = {
 			SignageSpeaker: "tv_speaker",
