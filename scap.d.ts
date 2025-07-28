@@ -959,9 +959,9 @@ declare global {
 				BR_UNKNOWN: 0,
 			} as const;
 			const DataBit = {
-				DB_7: 7,
-				DB_8: 8,
-				DB_UNKNOWN: 0,
+				BIT_7: 7,
+				BIT_8: 8,
+				BIT_UNKNOWN: 0,
 			} as const;
 			const FlowControl = {
 				HARDWARE: 3,
@@ -980,9 +980,9 @@ declare global {
 				UNKNOWN: 0,
 			} as const;
 			const StopBit = {
-				SB_1: 1,
-				SB_2: 2,
-				SB_UNKNOWN: 0,
+				BIT_1: 1,
+				BIT_2: 2,
+				BIT_UNKNOWN: 0,
 			}
 		}
 	}

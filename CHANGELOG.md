@@ -1,4 +1,7 @@
 # Changelog
+## v1.0.5
+- Correct data and stop bit prefixes.
+
 ## v1.0.4
 - Add `ServerProperty.autoSet` per SCAP 1.8 support.
 
